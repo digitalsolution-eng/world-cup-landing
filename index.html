@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>World Cup 2026 Shorts Launch Kit — Start a Faceless Football Channel Before Kickoff</title>
+<meta name="description" content="Launch a faceless YouTube football channel and ride the biggest Shorts RPM spike in YouTube history — without getting struck for match footage. Licensing cheat-sheet, 30 AI prompts, full launch playbook. $29." />
+
+<!-- Open Graph / social preview -->
+<meta property="og:title" content="World Cup 2026 Shorts Launch Kit" />
+<meta property="og:description" content="Launch a faceless football Shorts channel before kickoff. No strikes. $29 — price goes up June 11." />
+<meta property="og:type" content="website" />
+
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+<style>
+  :root {
+    --green: #0b8f3f;
+    --green-dark: #066b2e;
+    --green-glow: rgba(11, 143, 63, 0.45);
+    --black: #0a0d0b;
+    --ink: #11160f;
+    --white: #ffffff;
+    --muted: #9aa39c;
+    --line: rgba(255, 255, 255, 0.10);
+    --card: #13181400;
+    --radius: 16px;
+    --maxw: 1080px;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    font-family: 'Inter', system-ui, sans-serif;
+    background: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+    overflow-x: hidden;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  h1, h2, h3 { line-height: 1.05; }
+
+  .display {
+    font-family: 'Anton', 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    font-weight: 400;
+  }
+
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
+
+  a { color: inherit; text-decoration: none; }
+
+  /* ---------- Urgency banner ---------- */
+  .urgency {
+    position: sticky;
+    top: 0;
+    z-index: 50;
+    background: linear-gradient(90deg, var(--green-dark), var(--green));
+    color: #fff;
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.85rem;
+    letter-spacing: 0.4px;
+    padding: 9px 14px;
+  }
+  .urgency span { opacity: 0.92; }
+
+  /* ---------- Hero ---------- */
+  .hero {
+    position: relative;
+    padding: 64px 0 72px;
+    background:
+      radial-gradient(1200px 500px at 50% -10%, rgba(11,143,63,0.28), transparent 60%),
+      radial-gradient(700px 400px at 90% 10%, rgba(11,143,63,0.12), transparent 60%);
+    overflow: hidden;
+  }
+  .pitch-lines {
+    position: absolute; inset: 0; opacity: 0.06; pointer-events: none;
+    background-image: repeating-linear-gradient(
+      90deg, transparent, transparent 78px, #fff 78px, #fff 80px);
+  }
+  .badge {
+    display: inline-flex; align-items: center; gap: 8px;
+    background: rgba(11,143,63,0.16);
+    border: 1px solid rgba(11,143,63,0.5);
+    color: #66e08e;
+    font-weight: 700; font-size: 0.78rem; letter-spacing: 0.6px;
+    text-transform: uppercase;
+    padding: 7px 14px; border-radius: 999px;
+    margin-bottom: 22px;
+  }
+  .dot { width: 8px; height: 8px; border-radius: 50%; background: #2bd964; box-shadow: 0 0 10px #2bd964; }
+
+  .hero h1 {
+    font-size: clamp(2.4rem, 6.4vw, 4.6rem);
+    margin-bottom: 18px;
+    max-width: 16ch;
+  }
+  .hero h1 em { color: var(--green); font-style: normal; }
+
+  .sub {
+    font-size: clamp(1.02rem, 2.1vw, 1.25rem);
+    color: #cdd4ce;
+    max-width: 56ch;
+    margin-bottom: 30px;
+  }
+
+  /* ---------- Countdown ---------- */
+  .countdown {
+    display: flex; gap: 10px; flex-wrap: wrap;
+    margin-bottom: 34px;
+  }
+  .cd-box {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px 8px 10px;
+    min-width: 80px; text-align: center;
+    backdrop-filter: blur(4px);
+  }
+  .cd-num {
+    font-family: 'Anton', sans-serif;
+    font-size: 2.3rem; line-height: 1;
+    color: #fff;
+  }
+  .cd-label {
+    font-size: 0.66rem; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--muted);
+    margin-top: 6px;
+  }
+  .cd-caption { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
+  .cd-caption.live { color: #2bd964; font-weight: 700; }
+
+  /* ---------- Buttons ---------- */
+  .cta-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .btn {
+    display: inline-flex; align-items: center; gap: 10px;
+    background: var(--green);
+    color: #fff; font-weight: 800;
+    font-size: 1.05rem;
+    padding: 16px 30px; border-radius: 12px;
+    border: none; cursor: pointer;
+    box-shadow: 0 10px 30px var(--green-glow);
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+  }
+  .btn:hover { transform: translateY(-2px); background: #0aa047; box-shadow: 0 14px 38px var(--green-glow); }
+  .btn:active { transform: translateY(0); }
+  .price-strike { color: var(--muted); text-decoration: line-through; font-weight: 600; }
+  .price-now { color: #fff; font-weight: 800; }
+  .guarantee { font-size: 0.82rem; color: var(--muted); }
+
+  /* ---------- Section scaffolding ---------- */
+  section.block { padding: 72px 0; border-top: 1px solid var(--line); }
+  .eyebrow {
+    color: var(--green); font-weight: 800; font-size: 0.8rem;
+    letter-spacing: 1.6px; text-transform: uppercase; margin-bottom: 12px;
+  }
+  .h2 { font-size: clamp(1.8rem, 4.2vw, 2.8rem); margin-bottom: 14px; }
+  .lead { color: #c3cbc4; max-width: 60ch; margin-bottom: 40px; font-size: 1.05rem; }
+
+  /* ---------- Why-now stats ---------- */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+  .stat {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 22px;
+  }
+  .stat .big { font-family: 'Anton', sans-serif; font-size: 2.4rem; color: var(--green); line-height: 1; }
+  .stat p { color: #c3cbc4; margin-top: 10px; font-size: 0.95rem; }
+
+  /* ---------- Includes ---------- */
+  .includes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
+  .item {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 26px 24px;
+    position: relative;
+    transition: border-color 0.15s ease, transform 0.15s ease;
+  }
+  .item:hover { border-color: rgba(11,143,63,0.6); transform: translateY(-3px); }
+  .item .ic {
+    width: 44px; height: 44px; border-radius: 11px;
+    background: rgba(11,143,63,0.16);
+    display: grid; place-items: center;
+    font-size: 1.4rem; margin-bottom: 16px;
+  }
+  .item h3 { font-size: 1.18rem; margin-bottom: 8px; }
+  .item p { color: #bac2bb; font-size: 0.95rem; }
+  .item .tag {
+    position: absolute; top: 22px; right: 22px;
+    font-size: 0.66rem; font-weight: 800; letter-spacing: 0.8px;
+    text-transform: uppercase; color: #66e08e;
+    background: rgba(11,143,63,0.14); border: 1px solid rgba(11,143,63,0.4);
+    padding: 4px 9px; border-radius: 999px;
+  }
+  .item.full { grid-column: 1 / -1; }
+
+  /* ---------- Who it's for ---------- */
+  .who { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .who-card {
+    background: linear-gradient(180deg, rgba(11,143,63,0.10), rgba(255,255,255,0.02));
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 28px 24px;
+  }
+  .who-card .ic { font-size: 1.8rem; margin-bottom: 14px; }
+  .who-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
+  .who-card p { color: #bac2bb; font-size: 0.93rem; }
+
+  /* ---------- Price / final CTA ---------- */
+  .pricewrap {
+    background:
+      radial-gradient(600px 300px at 50% 0%, rgba(11,143,63,0.25), transparent 70%),
+      rgba(255,255,255,0.03);
+    border: 1px solid rgba(11,143,63,0.5);
+    border-radius: 22px;
+    padding: 54px 30px;
+    text-align: center;
+  }
+  .pricewrap .amount {
+    font-family: 'Anton', sans-serif;
+    font-size: 4.2rem; line-height: 1; color: #fff;
+  }
+  .pricewrap .was { color: var(--muted); text-decoration: line-through; font-size: 1.4rem; margin-left: 10px; }
+  .pricewrap .note { color: #c3cbc4; margin: 14px auto 28px; max-width: 44ch; }
+  .pricewrap .btn { font-size: 1.15rem; padding: 18px 38px; }
+  .ticklist { list-style: none; display: inline-flex; flex-direction: column; gap: 8px; text-align: left; margin: 0 auto 30px; }
+  .ticklist li { color: #d7ddd8; font-size: 0.96rem; }
+  .ticklist li::before { content: "✓"; color: var(--green); font-weight: 800; margin-right: 10px; }
+
+  /* ---------- Footer ---------- */
+  footer { padding: 40px 0 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
+  footer .disc { max-width: 70ch; margin-top: 10px; line-height: 1.6; }
+
+  /* ---------- Responsive ---------- */
+  @media (max-width: 860px) {
+    .stats, .who { grid-template-columns: 1fr; }
+    .includes { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 520px) {
+    .cd-box { min-width: 66px; }
+    .cd-num { font-size: 1.9rem; }
+    .cta-row { gap: 12px; }
+    .btn { width: 100%; justify-content: center; }
+  }
+</style>
+</head>
+<body>
+
+  <!-- URGENCY BANNER -->
+  <div class="urgency" id="urgencyBar">
+    ⏳ Launch-week price — <span>$29 now, goes up to $39 on June 11. The window closes after the July 19 final.</span>
+  </div>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="pitch-lines"></div>
+    <div class="wrap">
+      <span class="badge"><span class="dot"></span> First USA World Cup · First YouTube official platform</span>
+      <h1 class="display">Launch a <em>faceless football</em> Shorts channel before kickoff</h1>
+      <p class="sub">The biggest Shorts RPM spike in YouTube history is coming. This kit gets you posting fast — and keeps you monetized while everyone else gets struck for match footage.</p>
+
+      <!-- COUNTDOWN -->
+      <div class="countdown" id="countdown" aria-label="Countdown to World Cup kickoff">
+        <div class="cd-box"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Mins</div></div>
+        <div class="cd-box"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Secs</div></div>
+      </div>
+      <div class="cd-caption" id="cd-caption">until kickoff — June 11, 2026</div>
+
+      <div class="cta-row" style="margin-top:28px;">
+        <a class="btn" href="#GUMROAD_LINK" id="heroCta">Get the Kit — <span class="price-now">$29</span></a>
+        <div class="guarantee"><span class="price-strike">$49</span> &nbsp;·&nbsp; Instant download · Free updates through the tournament</div>
+      </div>
+    </div>
+  </header>
+
+  <!-- WHY NOW -->
+  <section class="block">
+    <div class="wrap">
+      <div class="eyebrow">Why this window is different</div>
+      <h2 class="h2 display">Five weeks. One topic. The highest-paying ad markets on earth.</h2>
+      <p class="lead">June 11 – July 19, 2026. Hosted across the USA, Canada and Mexico, with YouTube as the official platform pushing football to the front of the app.</p>
+      <div class="stats">
+        <div class="stat"><div class="big">$40–65</div><p>Tournament sports CPMs in direct deals — far above the normal rate. Advertiser money floods the pool and lifts Shorts RPM.</p></div>
+        <div class="stat"><div class="big">1st</div><p>First USA-hosted World Cup and first time YouTube is the official Preferred Platform. Discovery has never been this easy for football.</p></div>
+        <div class="stat"><div class="big">5 wks</div><p>The whole window. Value decays sharply after the final. The creators who win are posting <em>before</em> kickoff.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHAT'S INCLUDED -->
+  <section class="block" id="includes">
+    <div class="wrap">
+      <div class="eyebrow">What's inside</div>
+      <h2 class="h2 display">Everything to launch — nothing you don't need</h2>
+      <p class="lead">A complete, footage-free system. Download, build your buffer, start posting.</p>
+      <div class="includes">
+        <div class="item full">
+          <span class="tag">The moat</span>
+          <div class="ic">🛡️</div>
+          <h3>The Licensing Cheat-Sheet</h3>
+          <p>The part nobody else has. Exactly what YouTube + FIFA let you use vs. what gets you struck — plus how to apply to the official Creator Access Program. One avoided strike pays for the whole kit.</p>
+        </div>
+        <div class="item">
+          <div class="ic">🤖</div>
+          <h3>30 Plug-and-Play AI Prompts</h3>
+          <p>Copy-paste into ChatGPT for instant hooks, full Shorts scripts, titles and voiceover polish — built to pass YouTube's "original value" check so you stay monetizable.</p>
+        </div>
+        <div class="item">
+          <div class="ic">📈</div>
+          <h3>The Full Launch Playbook</h3>
+          <p>Pick-your-lane niche guide, hook formulas, a 5-week posting calendar (group stage → final) and the 60-minute daily production loop.</p>
+        </div>
+        <div class="item">
+          <div class="ic">⚡</div>
+          <h3>Batching Frameworks</h3>
+          <p>The exact workflow to produce a full day of Shorts in about 15 minutes. Script six, record six, edit six.</p>
+        </div>
+        <div class="item">
+          <div class="ic">🔄</div>
+          <h3>Free Updates</h3>
+          <p>Tactics and the licensing guide stay current through July 19, 2026. Buy once, get every update during the tournament.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- WHO IT'S FOR -->
+  <section class="block">
+    <div class="wrap">
+      <div class="eyebrow">Who it's for</div>
+      <h2 class="h2 display">Built for people who move before the window closes</h2>
+      <p class="lead"></p>
+      <div class="who">
+        <div class="who-card">
+          <div class="ic">🎬</div>
+          <h3>Aspiring faceless creators</h3>
+          <p>You've wanted to start a channel. The World Cup is the trending reason to finally do it — with a system instead of guesswork.</p>
+        </div>
+        <div class="who-card">
+          <div class="ic">⚽</div>
+          <h3>Football meme & clip accounts</h3>
+          <p>Already posting on TikTok or IG? Expand to Shorts during the highest-RPM football window there will ever be.</p>
+        </div>
+        <div class="who-card">
+          <div class="ic">💸</div>
+          <h3>Side-hustlers</h3>
+          <p>You chase real windows. This one is concentrated, time-boxed, and front-run by almost nobody who knows the footage rules.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICE / FINAL CTA -->
+  <section class="block">
+    <div class="wrap">
+      <div class="pricewrap">
+        <div class="eyebrow">Launch-week price</div>
+        <div><span class="amount display">$29</span><span class="was">$49</span></div>
+        <p class="note">One viral Short during peak advertiser season pays for this many times over. Price goes up to $39 on June 11.</p>
+        <ul class="ticklist">
+          <li>Licensing Cheat-Sheet (PDF) — stay monetized, avoid strikes</li>
+          <li>30 AI Prompts — paste straight into ChatGPT</li>
+          <li>The Full Launch Playbook (PDF) — calendar, hooks, daily loop</li>
+          <li>Batching frameworks + free updates through July 19, 2026</li>
+        </ul>
+        <div>
+          <a class="btn" href="#GUMROAD_LINK" id="finalCta">Get the Kit — $29 →</a>
+        </div>
+        <p class="guarantee" style="margin-top:18px;">Instant download · Yours forever</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="wrap">
+      <strong>World Cup 2026 Shorts Launch Kit</strong>
+      <p class="disc">Honest note: this is a practical playbook, not a get-rich-quick promise. Results depend on the work you put in. Footage and program rules can change — always verify current terms on official YouTube and FIFA channels. Not affiliated with, endorsed by, or sponsored by FIFA or YouTube.</p>
+    </div>
+  </footer>
+
+<script>
+  // ----- Countdown to kickoff: June 11, 2026, 20:00 ET (Mexico City opener kickoff ~ evening) -----
+  // Using UTC to stay consistent across viewers' time zones.
+  const KICKOFF = new Date('2026-06-11T19:00:00-05:00').getTime();
+
+  const els = {
+    days: document.getElementById('cd-days'),
+    hours: document.getElementById('cd-hours'),
+    mins: document.getElementById('cd-mins'),
+    secs: document.getElementById('cd-secs'),
+    caption: document.getElementById('cd-caption'),
+  };
+
+  function pad(n) { return String(n).padStart(2, '0'); }
+
+  function tick() {
+    const now = Date.now();
+    let diff = KICKOFF - now;
+
+    if (diff <= 0) {
+      // Tournament is live — flip messaging.
+      els.days.textContent = '00';
+      els.hours.textContent = '00';
+      els.mins.textContent = '00';
+      els.secs.textContent = '00';
+      els.caption.textContent = '🔴 The World Cup is LIVE — the window is open NOW';
+      els.caption.classList.add('live');
+      document.getElementById('urgencyBar').innerHTML =
+        '🔴 The tournament is LIVE — every day without posting is views left on the table. <span>Get the kit and start now.</span>';
+      return;
+    }
+
+    const d = Math.floor(diff / 86400000); diff -= d * 86400000;
+    const h = Math.floor(diff / 3600000); diff -= h * 3600000;
+    const m = Math.floor(diff / 60000); diff -= m * 60000;
+    const s = Math.floor(diff / 1000);
+
+    els.days.textContent = pad(d);
+    els.hours.textContent = pad(h);
+    els.mins.textContent = pad(m);
+    els.secs.textContent = pad(s);
+  }
+
+  tick();
+  setInterval(tick, 1000);
+</script>
+</body>
+</html>
