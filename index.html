@@ -112,8 +112,14 @@
   .platforms { display: flex; align-items: center; gap: 26px; flex-wrap: wrap; margin-top: 30px; padding-top: 24px; border-top: 1px solid var(--line); }
   .platforms span.lbl { font-size: 0.76rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--ink-faint); }
   .platforms .logos { display: flex; align-items: center; gap: 20px; }
-  .platforms svg { height: 24px; width: auto; fill: var(--ink-soft); transition: fill .2s, transform .2s; }
-  .platforms a:hover svg { fill: var(--ink); transform: translateY(-2px); }
+  .platforms svg { height: 24px; width: auto; fill: var(--ink-soft); }
+  .platforms a { cursor: default; }
+
+  /* scroll cue */
+  .scroll-cue { position: absolute; left: 50%; bottom: 14px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 5px; color: var(--ink-faint); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; z-index: 2; animation: cue 1.8s ease-in-out infinite; pointer-events: none; }
+  .scroll-cue svg { width: 22px; height: 22px; stroke: var(--green); stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  @keyframes cue { 0%,100% { transform: translate(-50%,0); opacity: .65; } 50% { transform: translate(-50%,7px); opacity: 1; } }
+  @media (prefers-reduced-motion: reduce) { .scroll-cue { animation: none; } }
 
   /* sections */
   section.block { padding: 84px 0; position: relative; }
@@ -177,46 +183,21 @@
   .yt-thumb.empty::after { content: "Drop thumbnail \2192 images/" attr(data-file); position: absolute; inset: 0; display: grid; place-items: center; color: var(--ink-faint); font-size: 0.78rem; font-family: ui-monospace, monospace; text-align: center; padding: 0 14px; background: repeating-linear-gradient(45deg, #0e110b, #0e110b 10px, #11140f 10px, #11140f 20px); }
   .yt-badge { position: absolute; right: 8px; bottom: 8px; background: rgba(0,0,0,0.82); color: #fff; font-size: 0.72rem; font-weight: 600; padding: 2px 6px; border-radius: 5px; letter-spacing: 0.02em; }
   .yt-info { display: flex; gap: 12px; margin-top: 12px; }
-  .yt-av { position: relative; width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14); filter: blur(2.6px); }
+  .yt-av { position: relative; width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; overflow: hidden; box-shadow: inset 0 0 0 1px rgba(255,255,255,0.14); filter: blur(1.8px); }
   .yt-av svg { display: none; }
   /* blurred head-and-shoulders portrait look (no real face) */
-  .yt-av::before { content: ""; position: absolute; inset: 0; background:
-      radial-gradient(circle at 50% 30%, #ecc7a4 0 23%, rgba(236,199,164,0) 43%),
-      radial-gradient(ellipse 80% 55% at 50% 108%, rgba(0,0,0,0.5) 0 55%, rgba(0,0,0,0) 100%),
-      linear-gradient(180deg, rgba(255,255,255,0.22), rgba(0,0,0,0.28)); }
-  /* varied blurred avatar TYPES: people / logos / landscapes — looks like real different channels */
-  /* 1 person (light skin) */
-  .yt-card:nth-child(7n+1) .yt-av::before { background:
-      radial-gradient(circle at 50% 16%, #3a2a1e 0 14%, transparent 30%),
-      radial-gradient(circle at 50% 33%, #ecc7a4 0 22%, transparent 42%),
-      linear-gradient(180deg, #3a4f6b 0 55%, #243246 100%); }
-  /* 2 logo: ring badge */
-  .yt-card:nth-child(7n+2) .yt-av::before { background:
-      radial-gradient(circle at 50% 50%, #e9c46a 0 12%, transparent 13%),
-      radial-gradient(circle at 50% 50%, transparent 20%, #34c46d 22% 31%, transparent 33%),
-      radial-gradient(circle at 50% 42%, #0f3d24 0 70%, #0a2417 100%); }
-  /* 3 landscape: day */
-  .yt-card:nth-child(7n+3) .yt-av::before { background:
-      radial-gradient(circle at 72% 28%, #ffe08a 0 9%, transparent 13%),
-      linear-gradient(180deg, #4a7fb5 0 52%, #2f8f4e 52% 100%); }
-  /* 4 person (dark skin) */
-  .yt-card:nth-child(7n+4) .yt-av::before { background:
-      radial-gradient(circle at 50% 16%, #0e0a07 0 15%, transparent 31%),
-      radial-gradient(circle at 50% 33%, #7a4a2e 0 22%, transparent 42%),
-      linear-gradient(180deg, #33405a 0 55%, #1f2a3d 100%); }
-  /* 5 logo: diagonal mark */
-  .yt-card:nth-child(7n+5) .yt-av::before { background:
-      radial-gradient(circle at 50% 50%, #fff 0 8%, transparent 9%),
-      linear-gradient(135deg, #34c46d 0 50%, #1e7a45 50% 100%); }
-  /* 6 landscape: sunset */
-  .yt-card:nth-child(7n+6) .yt-av::before { background:
-      radial-gradient(circle at 50% 64%, #ffb066 0 10%, transparent 13%),
-      linear-gradient(180deg, #6b3f7a 0 40%, #c8643c 40% 62%, #2a1f2e 62% 100%); }
-  /* 7 person (tan) */
-  .yt-card:nth-child(7n) .yt-av::before { background:
-      radial-gradient(circle at 49% 17%, #241a12 0 13%, transparent 29%),
-      radial-gradient(circle at 49% 33%, #c98d63 0 21%, transparent 41%),
-      linear-gradient(180deg, #2f4a3a 0 55%, #1d2f25 100%); }
+  /* real photos (faces + football scenes), blurred — looks like real channel avatars */
+  .yt-av::before { content: ""; position: absolute; inset: 0; background-size: cover; background-position: center; background-image: url(images/avatars/av12.jpg); }
+  .yt-card:nth-child(10n+1) .yt-av::before { background-image: url(images/avatars/av12.jpg); }
+  .yt-card:nth-child(10n+2) .yt-av::before { background-image: url(images/avatars/scene1.jpg); }
+  .yt-card:nth-child(10n+3) .yt-av::before { background-image: url(images/avatars/av15.jpg); }
+  .yt-card:nth-child(10n+4) .yt-av::before { background-image: url(images/avatars/av33.jpg); }
+  .yt-card:nth-child(10n+5) .yt-av::before { background-image: url(images/avatars/scene2.jpg); }
+  .yt-card:nth-child(10n+6) .yt-av::before { background-image: url(images/avatars/av5.jpg); }
+  .yt-card:nth-child(10n+7) .yt-av::before { background-image: url(images/avatars/av47.jpg); }
+  .yt-card:nth-child(10n+8) .yt-av::before { background-image: url(images/avatars/av52.jpg); }
+  .yt-card:nth-child(10n+9) .yt-av::before { background-image: url(images/avatars/av60.jpg); }
+  .yt-card:nth-child(10n) .yt-av::before { background-image: url(images/avatars/av8.jpg); }
   .yt-chan .anon { filter: blur(3px); user-select: none; -webkit-user-select: none; letter-spacing: 0.02em; }
   .yt-chan { -webkit-user-select: none; }
   .yt-title { font-size: 0.95rem; font-weight: 600; color: var(--ink); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
@@ -314,10 +295,10 @@
           <div class="platforms">
             <span class="lbl">Grow on</span>
             <div class="logos">
-              <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .7 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .3-4.5 31 31 0 0 0-.3-4.5zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
-              <a href="#" aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.5 2h-3v13.5a3 3 0 1 1-3-3c.3 0 .6 0 .9.1V9.5a6 6 0 1 0 5.1 5.9V8.8a7 7 0 0 0 4 1.3V7a4 4 0 0 1-4-4z"/></svg></a>
-              <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.1 1 0 1.7.2 2.3.5.6.2 1.1.5 1.6 1s.8 1 1 1.6c.3.6.5 1.3.5 2.3C21.9 8.7 22 9 22 12s0 3.3-.1 4.4c0 1-.2 1.7-.5 2.3a4.3 4.3 0 0 1-1 1.6 4.3 4.3 0 0 1-1.6 1c-.6.3-1.3.5-2.3.5-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.7-.2-2.3-.5a4.3 4.3 0 0 1-1.6-1 4.3 4.3 0 0 1-1-1.6c-.3-.6-.5-1.3-.5-2.3C2 15.3 2 15 2 12s0-3.3.1-4.4c0-1 .2-1.7.5-2.3a4.3 4.3 0 0 1 1-1.6 4.3 4.3 0 0 1 1.6-1c.6-.3 1.3-.5 2.3-.5C9 2 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.8 5.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg></a>
-              <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+              <a aria-label="YouTube"><svg viewBox="0 0 24 24"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .7 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .3-4.5 31 31 0 0 0-.3-4.5zM9.8 15.3V8.7l5.7 3.3z"/></svg></a>
+              <a aria-label="TikTok"><svg viewBox="0 0 24 24"><path d="M16.5 2h-3v13.5a3 3 0 1 1-3-3c.3 0 .6 0 .9.1V9.5a6 6 0 1 0 5.1 5.9V8.8a7 7 0 0 0 4 1.3V7a4 4 0 0 1-4-4z"/></svg></a>
+              <a aria-label="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2c2.7 0 3 0 4.1.1 1 0 1.7.2 2.3.5.6.2 1.1.5 1.6 1s.8 1 1 1.6c.3.6.5 1.3.5 2.3C21.9 8.7 22 9 22 12s0 3.3-.1 4.4c0 1-.2 1.7-.5 2.3a4.3 4.3 0 0 1-1 1.6 4.3 4.3 0 0 1-1.6 1c-.6.3-1.3.5-2.3.5-1.1.1-1.4.1-4.1.1s-3 0-4.1-.1c-1 0-1.7-.2-2.3-.5a4.3 4.3 0 0 1-1.6-1 4.3 4.3 0 0 1-1-1.6c-.3-.6-.5-1.3-.5-2.3C2 15.3 2 15 2 12s0-3.3.1-4.4c0-1 .2-1.7.5-2.3a4.3 4.3 0 0 1 1-1.6 4.3 4.3 0 0 1 1.6-1c.6-.3 1.3-.5 2.3-.5C9 2 9.3 2 12 2zm0 5a5 5 0 1 0 0 10 5 5 0 0 0 0-10zm0 8.2a3.2 3.2 0 1 1 0-6.4 3.2 3.2 0 0 1 0 6.4zM17.8 5.6a1.2 1.2 0 1 0 0 2.4 1.2 1.2 0 0 0 0-2.4z"/></svg></a>
+              <a aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.5h-1.3c-1.2 0-1.6.8-1.6 1.6V12h2.8l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
             </div>
           </div>
         </div>
@@ -328,6 +309,10 @@
           <img class="trophy" src="images/trophy.png" alt="World Cup trophy" />
         </div>
       </div>
+    </div>
+    <div class="scroll-cue" aria-hidden="true">
+      <span>Scroll</span>
+      <svg viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
     </div>
   </header>
 
