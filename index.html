@@ -80,10 +80,10 @@
   .hero p.sub { font-size: 1.12rem; color: var(--ink-soft); max-width: 46ch; margin-bottom: 30px; }
 
   /* trophy animation */
-  .stage { position: relative; height: 430px; display: grid; place-items: center; }
-  .stage .halo { position: absolute; width: 360px; height: 360px; border-radius: 50%; background: radial-gradient(circle, rgba(233,196,106,0.22), transparent 62%); filter: blur(6px); animation: pulse 5s ease-in-out infinite; }
+  .stage { position: relative; height: 560px; display: grid; place-items: center; }
+  .stage .halo { position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(233,196,106,0.22), transparent 62%); filter: blur(6px); animation: pulse 5s ease-in-out infinite; }
   @keyframes pulse { 0%,100% { transform: scale(1); opacity: .8; } 50% { transform: scale(1.08); opacity: 1; } }
-  .trophy { width: 240px; height: auto; animation: bob 4.2s ease-in-out infinite; filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)); position: relative; z-index: 2; }
+  .trophy { width: 420px; max-width: 100%; height: auto; animation: bob 4.2s ease-in-out infinite; filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)); position: relative; z-index: 2; }
   @keyframes bob { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-16px) rotate(1deg); } }
   .trophy .sheen { animation: sheen 4.5s ease-in-out infinite; transform-origin: center; }
   @keyframes sheen { 0%,72%,100% { opacity: 0; } 80% { opacity: .85; } 86% { opacity: .2; } }
@@ -219,8 +219,8 @@
 
   @media (max-width: 880px) {
     .hero-grid, .mock-grid, .who { grid-template-columns: 1fr; gap: 36px; }
-    .stage { height: 340px; }
-    .trophy { width: 180px; }
+    .stage { height: 420px; }
+    .trophy { width: 320px; }
     .who-figure { order: -1; }
     .who-figure img { height: 320px; }
     .stats, .includes { grid-template-columns: 1fr; }
