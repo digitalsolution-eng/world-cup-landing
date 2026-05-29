@@ -85,6 +85,7 @@
   @keyframes pulse { 0%,100% { transform: scale(1); opacity: .8; } 50% { transform: scale(1.08); opacity: 1; } }
   .trophy { width: 540px; max-width: 110%; height: auto; display: block; animation: bob 4.2s ease-in-out infinite; position: relative; z-index: 2; }
   #trophyVid { position: absolute; width: 2px; height: 2px; opacity: 0; pointer-events: none; }
+  .trophy-poster { position: absolute; width: 540px; max-width: 110%; left: 50%; top: 50%; transform: translate(-50%,-50%); z-index: 1; pointer-events: none; animation: bob 4.2s ease-in-out infinite; }
   @keyframes bob { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-16px) rotate(1deg); } }
   .trophy .sheen { animation: sheen 4.5s ease-in-out infinite; transform-origin: center; }
   @keyframes sheen { 0%,72%,100% { opacity: 0; } 80% { opacity: .85; } 86% { opacity: .2; } }
@@ -319,6 +320,7 @@
         <!-- TROPHY: alpha-packed h264 -> WebGL canvas = transparent on every browser -->
         <div class="stage" aria-hidden="true">
           <div class="halo"></div>
+          <img class="trophy-poster" src="images/trophy_poster.jpg" alt="World Cup trophy" />
           <canvas class="trophy" id="trophyCanvas" width="696" height="712"></canvas>
           <video id="trophyVid" src="images/trophy_packed.mp4" muted loop autoplay playsinline preload="auto"></video>
         </div>
