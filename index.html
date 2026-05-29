@@ -163,18 +163,22 @@
   .file b { display: block; font-size: 0.96rem; color: var(--ink); }
   .file small { color: var(--ink-faint); }
 
-  /* proof / channels */
-  .proof-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .channel { background: var(--panel); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; transition: transform .2s, border-color .2s, box-shadow .2s; }
-  .channel:hover { transform: translateY(-4px); border-color: var(--line-strong); box-shadow: 0 18px 44px rgba(0,0,0,0.45); }
-  .channel .thumb { position: relative; aspect-ratio: 16/10; overflow: hidden; background: #000; }
-  .channel .thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
-  .channel:hover .thumb img { transform: scale(1.04); }
-  .channel .meta { display: flex; align-items: center; gap: 10px; padding: 16px 18px; }
-  .channel .meta .plat svg { height: 18px; fill: var(--ink-faint); }
-  .channel .meta b { font-size: 0.92rem; color: var(--ink); }
-  .channel .meta small { color: var(--ink-faint); display: block; font-size: 0.78rem; }
-  .proof-note { font-size: 0.8rem; color: var(--ink-faint); margin-top: 22px; max-width: 78ch; }
+  /* proof / youtube-style grid */
+  .yt-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px; row-gap: 34px; }
+  .yt-card { cursor: pointer; }
+  .yt-thumb { position: relative; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; background: #0a0c08; border: 1px solid var(--line); transition: border-radius .2s; }
+  .yt-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
+  .yt-card:hover .yt-thumb { border-radius: 4px; }
+  .yt-card:hover .yt-thumb img { transform: scale(1.05); }
+  .yt-thumb.empty::after { content: "Drop thumbnail \2192 images/" attr(data-file); position: absolute; inset: 0; display: grid; place-items: center; color: var(--ink-faint); font-size: 0.78rem; font-family: ui-monospace, monospace; text-align: center; padding: 0 14px; background: repeating-linear-gradient(45deg, #0e110b, #0e110b 10px, #11140f 10px, #11140f 20px); }
+  .yt-badge { position: absolute; right: 8px; bottom: 8px; background: rgba(0,0,0,0.82); color: #fff; font-size: 0.72rem; font-weight: 600; padding: 2px 6px; border-radius: 5px; letter-spacing: 0.02em; }
+  .yt-info { display: flex; gap: 12px; margin-top: 12px; }
+  .yt-av { width: 36px; height: 36px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; font-family: 'Newsreader', serif; font-weight: 600; color: #06250f; font-size: 1.05rem; }
+  .yt-title { font-size: 0.95rem; font-weight: 600; color: var(--ink); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+  .yt-chan { font-size: 0.82rem; color: var(--ink-faint); margin-top: 5px; display: flex; align-items: center; gap: 4px; }
+  .yt-chan svg { width: 13px; height: 13px; fill: var(--ink-faint); }
+  .yt-stats { font-size: 0.82rem; color: var(--ink-faint); }
+  .proof-note { font-size: 0.8rem; color: var(--ink-faint); margin-top: 30px; max-width: 80ch; }
 
   /* who */
   .who { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; }
@@ -207,13 +211,15 @@
     .trophy { width: 180px; }
     .who-figure { order: -1; }
     .who-figure img { height: 320px; }
-    .stats, .includes, .proof-grid { grid-template-columns: 1fr; }
+    .stats, .includes { grid-template-columns: 1fr; }
+    .yt-grid { grid-template-columns: repeat(2, 1fr); }
     .stat { border-right: 0; border-bottom: 1px solid var(--line); }
     .stat:last-child { border-bottom: 0; }
     .item.feature { grid-column: auto; }
   }
   @media (max-width: 520px) {
     body { font-size: 16px; }
+    .yt-grid { grid-template-columns: 1fr; }
     .countdown { gap: 20px; }
     .cd-num { font-size: 2rem; }
     .btn { width: 100%; justify-content: center; }
@@ -399,30 +405,130 @@
         <h2 class="serif">Football short-form is already a business.</h2>
         <p>Faceless football pages built on clips, breakdowns and stats are some of the fastest-growing accounts on every platform. The World Cup is the moment to start one.</p>
       </div>
-      <div class="proof-grid">
-        <div class="channel reveal" data-d="1">
-          <div class="thumb"><img src="images/test1.png" alt="Football Shorts channel example" loading="lazy" /></div>
-          <div class="meta">
-            <span class="plat"><svg viewBox="0 0 24 24"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .7 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .3-4.5 31 31 0 0 0-.3-4.5zM9.8 15.3V8.7l5.7 3.3z"/></svg></span>
-            <div><b>Football Shorts payouts</b><small>YouTube Shorts</small></div>
+      <div class="yt-grid">
+
+        <div class="yt-card reveal">
+          <div class="yt-thumb"><img src="images/test1.png" alt="" loading="lazy" /><span class="yt-badge">7:26</span></div>
+          <div class="yt-info">
+            <div class="yt-av" style="background:#34c46d">F</div>
+            <div>
+              <div class="yt-title">How I Made $10,000 Posting Football Shorts!</div>
+              <div class="yt-chan">FootyCash <svg viewBox="0 0 24 24"><path d="M12 2l2.4 1.8 3 .2.9 2.8 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.8-3 .2L12 22l-2.4-1.8-3-.2-.9-2.8L3.3 14.4l.9-2.9-.9-2.9 2.4-1.8.9-2.8 3-.2zm-1 13l5-5-1.4-1.4L11 12.2 9.4 10.6 8 12z"/></svg></div>
+              <div class="yt-stats">312K views · 2 weeks ago</div>
+            </div>
           </div>
         </div>
-        <div class="channel reveal" data-d="2">
-          <div class="thumb"><img src="images/test2.png" alt="Making money on football videos example" loading="lazy" /></div>
-          <div class="meta">
-            <span class="plat"><svg viewBox="0 0 24 24"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .7 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .3-4.5 31 31 0 0 0-.3-4.5zM9.8 15.3V8.7l5.7 3.3z"/></svg></span>
-            <div><b>Scaling football videos</b><small>YouTube long-form + Shorts</small></div>
+
+        <div class="yt-card reveal">
+          <div class="yt-thumb"><img src="images/test2.png" alt="" loading="lazy" /><span class="yt-badge">21:45</span></div>
+          <div class="yt-info">
+            <div class="yt-av" style="background:#e9c46a">G</div>
+            <div>
+              <div class="yt-title">How I Make Money On Football Videos</div>
+              <div class="yt-chan">GoalMoney <svg viewBox="0 0 24 24"><path d="M12 2l2.4 1.8 3 .2.9 2.8 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.8-3 .2L12 22l-2.4-1.8-3-.2-.9-2.8L3.3 14.4l.9-2.9-.9-2.9 2.4-1.8.9-2.8 3-.2zm-1 13l5-5-1.4-1.4L11 12.2 9.4 10.6 8 12z"/></svg></div>
+              <div class="yt-stats">540K views · 1 month ago</div>
+            </div>
           </div>
         </div>
-        <div class="channel reveal" data-d="3">
-          <div class="thumb"><img src="images/test3.png" alt="Copyright-free football highlights example" loading="lazy" /></div>
-          <div class="meta">
-            <span class="plat"><svg viewBox="0 0 24 24"><path d="M23 7.5a3 3 0 0 0-2.1-2.1C19 5 12 5 12 5s-7 0-8.9.4A3 3 0 0 0 1 7.5 31 31 0 0 0 .7 12 31 31 0 0 0 1 16.5a3 3 0 0 0 2.1 2.1C5 19 12 19 12 19s7 0 8.9-.4a3 3 0 0 0 2.1-2.1 31 31 0 0 0 .3-4.5 31 31 0 0 0-.3-4.5zM9.8 15.3V8.7l5.7 3.3z"/></svg></span>
-            <div><b>Copyright-free highlights</b><small>YouTube Shorts</small></div>
+
+        <div class="yt-card reveal">
+          <div class="yt-thumb"><img src="images/test3.png" alt="" loading="lazy" /><span class="yt-badge">7:15</span></div>
+          <div class="yt-info">
+            <div class="yt-av" style="background:#3b82f6">S</div>
+            <div>
+              <div class="yt-title">How I Make Football Highlights Without Copyright</div>
+              <div class="yt-chan">ShortsLab</div>
+              <div class="yt-stats">128K views · 5 days ago</div>
+            </div>
           </div>
         </div>
+
+        <div class="yt-card reveal">
+          <div class="yt-thumb empty" data-file="thumb04.png"><img src="images/thumb04.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">12:18</span></div>
+          <div class="yt-info">
+            <div class="yt-av" style="background:#ef4444">H</div>
+            <div>
+              <div class="yt-title">I Tried Faceless Football Shorts For 30 Days</div>
+              <div class="yt-chan">Side Hustle FC</div>
+              <div class="yt-stats">89K views · 1 week ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-card reveal">
+          <div class="yt-thumb empty" data-file="thumb05.png"><img src="images/thumb05.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">14:02</span></div>
+          <div class="yt-info">
+            <div class="yt-av" style="background:#a855f7">A</div>
+            <div>
+              <div class="yt-title">$0 to 100K Subs With AI Football Edits</div>
+              <div class="yt-chan">AIKickoff <svg viewBox="0 0 24 24"><path d="M12 2l2.4 1.8 3 .2.9 2.8 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.8-3 .2L12 22l-2.4-1.8-3-.2-.9-2.8L3.3 14.4l.9-2.9-.9-2.9 2.4-1.8.9-2.8 3-.2zm-1 13l5-5-1.4-1.4L11 12.2 9.4 10.6 8 12z"/></svg></div>
+              <div class="yt-stats">204K views · 3 weeks ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-card reveal">
+          <div class="yt-thumb empty" data-file="thumb06.png"><img src="images/thumb06.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">9:57</span></div>
+          <div class="yt-info">
+            <div class="yt-av" style="background:#14b8a6">M</div>
+            <div>
+              <div class="yt-title">The Faceless World Cup Channel Strategy</div>
+              <div class="yt-chan">Matchday Money</div>
+              <div class="yt-stats">47K views · 4 days ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-card reveal">
+          <div class="yt-thumb empty" data-file="thumb07.png"><img src="images/thumb07.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">8:31</span></div>
+          <div class="yt-info">
+            <div class="yt-av" style="background:#f59e0b">C</div>
+            <div>
+              <div class="yt-title">Why Football Shorts Print Money In 2026</div>
+              <div class="yt-chan">Creator Pitch <svg viewBox="0 0 24 24"><path d="M12 2l2.4 1.8 3 .2.9 2.8 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.8-3 .2L12 22l-2.4-1.8-3-.2-.9-2.8L3.3 14.4l.9-2.9-.9-2.9 2.4-1.8.9-2.8 3-.2zm-1 13l5-5-1.4-1.4L11 12.2 9.4 10.6 8 12z"/></svg></div>
+              <div class="yt-stats">156K views · 2 weeks ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-card reveal">
+          <div class="yt-thumb empty" data-file="thumb08.png"><img src="images/thumb08.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">18:09</span></div>
+          <div class="yt-info">
+            <div class="yt-av" style="background:#22c55e">C</div>
+            <div>
+              <div class="yt-title">Copyright-Free Highlights: Full Tutorial</div>
+              <div class="yt-chan">ClipSafe</div>
+              <div class="yt-stats">73K views · 6 days ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-card reveal">
+          <div class="yt-thumb empty" data-file="thumb09.png"><img src="images/thumb09.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">15:33</span></div>
+          <div class="yt-info">
+            <div class="yt-av" style="background:#0ea5e9">G</div>
+            <div>
+              <div class="yt-title">I Posted 90 Shorts During The World Cup</div>
+              <div class="yt-chan">GroupStage <svg viewBox="0 0 24 24"><path d="M12 2l2.4 1.8 3 .2.9 2.8 2.4 1.8-.9 2.9.9 2.9-2.4 1.8-.9 2.8-3 .2L12 22l-2.4-1.8-3-.2-.9-2.8L3.3 14.4l.9-2.9-.9-2.9 2.4-1.8.9-2.8 3-.2zm-1 13l5-5-1.4-1.4L11 12.2 9.4 10.6 8 12z"/></svg></div>
+              <div class="yt-stats">268K views · 1 month ago</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="yt-card reveal">
+          <div class="yt-thumb empty" data-file="thumb10.png"><img src="images/thumb10.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">11:40</span></div>
+          <div class="yt-info">
+            <div class="yt-av" style="background:#eab308">N</div>
+            <div>
+              <div class="yt-title">Faceless Football Channel: My Exact Setup</div>
+              <div class="yt-chan">NoFace FC</div>
+              <div class="yt-stats">112K views · 9 days ago</div>
+            </div>
+          </div>
+        </div>
+
       </div>
-      <p class="proof-note">Examples of football short-form content. Not affiliated with these channels, and not a promise of earnings. Results depend on your work, niche and consistency.</p>
+      <p class="proof-note">Illustrative examples of football short-form content, not real videos, channels or earnings claims. Replace the placeholder tiles with your own thumbnails in <code>images/</code> (thumb04 through thumb10). Results depend on your work, niche and consistency.</p>
     </div>
   </section>
 
