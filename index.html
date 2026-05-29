@@ -163,9 +163,12 @@
   .file b { display: block; font-size: 0.96rem; color: var(--ink); }
   .file small { color: var(--ink-faint); }
 
-  /* proof / youtube-style grid */
-  .yt-grid { display: grid; grid-template-columns: repeat(3, 1fr); column-gap: 16px; row-gap: 34px; }
-  .yt-card { cursor: pointer; }
+  /* proof / youtube-style marquee */
+  .yt-marquee { position: relative; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); mask-image: linear-gradient(90deg, transparent, #000 5%, #000 95%, transparent); }
+  .yt-track { display: flex; gap: 18px; width: max-content; animation: scroll-x 72s linear infinite; will-change: transform; }
+  .yt-marquee:hover .yt-track { animation-play-state: paused; }
+  @keyframes scroll-x { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  .yt-card { cursor: pointer; flex: 0 0 300px; width: 300px; }
   .yt-thumb { position: relative; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; background: #0a0c08; border: 1px solid var(--line); transition: border-radius .2s; }
   .yt-thumb img { width: 100%; height: 100%; object-fit: cover; transition: transform .35s; }
   .yt-card:hover .yt-thumb { border-radius: 4px; }
@@ -215,14 +218,13 @@
     .who-figure { order: -1; }
     .who-figure img { height: 320px; }
     .stats, .includes { grid-template-columns: 1fr; }
-    .yt-grid { grid-template-columns: repeat(2, 1fr); }
     .stat { border-right: 0; border-bottom: 1px solid var(--line); }
     .stat:last-child { border-bottom: 0; }
     .item.feature { grid-column: auto; }
   }
   @media (max-width: 520px) {
     body { font-size: 16px; }
-    .yt-grid { grid-template-columns: 1fr; }
+    .yt-card { flex: 0 0 260px; width: 260px; }
     .countdown { gap: 20px; }
     .cd-num { font-size: 2rem; }
     .btn { width: 100%; justify-content: center; }
@@ -401,28 +403,28 @@
   </section>
 
   <!-- PROOF / CHANNELS WINNING -->
-  <section class="block alt">
+  <section class="block alt" id="proofSection">
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">The model in the wild</span>
         <h2 class="serif">Football short-form is already a business.</h2>
         <p>Faceless football pages built on clips, breakdowns and stats are some of the fastest-growing accounts on every platform. The World Cup is the moment to start one.</p>
       </div>
-      <div class="yt-grid">
+      <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+        <symbol id="ic-ball" viewBox="0 0 24 24">
+          <circle cx="12" cy="12" r="10" fill="#fff"/>
+          <path fill="#101410" d="M12 5.6l3 2.2-1.15 3.55h-3.7L9 7.8zM5.6 10.8l2.85.05 1.15 3.55-2.35 2.2-2.4-1.85zm12.8 0l-.45 3.95-2.4 1.85-2.35-2.2 1.15-3.55zM9.1 16.9h5.8l1 2.65-3.9 1.45-3.9-1.45z"/>
+        </symbol>
+        <symbol id="ic-shield" viewBox="0 0 24 24">
+          <path fill="#fff" d="M12 2.2l8 2.9v6.1c0 5-3.6 8.5-8 10.6-4.4-2.1-8-5.6-8-10.6V5.1z"/>
+          <path fill="#101410" d="M12 5.4l5 1.85v4.1c0 3.3-2.3 5.7-5 7.2-2.7-1.5-5-3.9-5-7.2v-4.1z"/>
+          <circle cx="12" cy="11" r="2.4" fill="#fff"/>
+        </symbol>
+      </svg>
+      <div class="yt-marquee">
+        <div class="yt-track" id="ytTrack">
 
-        <svg width="0" height="0" style="position:absolute" aria-hidden="true">
-          <symbol id="ic-ball" viewBox="0 0 24 24">
-            <circle cx="12" cy="12" r="10" fill="#fff"/>
-            <path fill="#101410" d="M12 5.6l3 2.2-1.15 3.55h-3.7L9 7.8zM5.6 10.8l2.85.05 1.15 3.55-2.35 2.2-2.4-1.85zm12.8 0l-.45 3.95-2.4 1.85-2.35-2.2 1.15-3.55zM9.1 16.9h5.8l1 2.65-3.9 1.45-3.9-1.45z"/>
-          </symbol>
-          <symbol id="ic-shield" viewBox="0 0 24 24">
-            <path fill="#fff" d="M12 2.2l8 2.9v6.1c0 5-3.6 8.5-8 10.6-4.4-2.1-8-5.6-8-10.6V5.1z"/>
-            <path fill="#101410" d="M12 5.4l5 1.85v4.1c0 3.3-2.3 5.7-5 7.2-2.7-1.5-5-3.9-5-7.2v-4.1z"/>
-            <circle cx="12" cy="11" r="2.4" fill="#fff"/>
-          </symbol>
-        </svg>
-
-        <div class="yt-card reveal">
+        <div class="yt-card">
           <div class="yt-thumb"><img src="images/test1.png" alt="" loading="lazy" /><span class="yt-badge">7:26</span></div>
           <div class="yt-info">
             <div class="yt-av" style="background:#1e7a45"><svg><use href="#ic-ball"/></svg></div>
@@ -434,7 +436,7 @@
           </div>
         </div>
 
-        <div class="yt-card reveal">
+        <div class="yt-card">
           <div class="yt-thumb"><img src="images/test2.png" alt="" loading="lazy" /><span class="yt-badge">21:45</span></div>
           <div class="yt-info">
             <div class="yt-av" style="background:#a8861f"><svg><use href="#ic-shield"/></svg></div>
@@ -446,7 +448,7 @@
           </div>
         </div>
 
-        <div class="yt-card reveal">
+        <div class="yt-card">
           <div class="yt-thumb"><img src="images/test3.png" alt="" loading="lazy" /><span class="yt-badge">7:15</span></div>
           <div class="yt-info">
             <div class="yt-av" style="background:#2563c7"><svg><use href="#ic-ball"/></svg></div>
@@ -458,7 +460,7 @@
           </div>
         </div>
 
-        <div class="yt-card reveal">
+        <div class="yt-card">
           <div class="yt-thumb empty" data-file="thumb04.png"><img src="images/thumb04.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">12:18</span></div>
           <div class="yt-info">
             <div class="yt-av" style="background:#c23b3b"><svg><use href="#ic-shield"/></svg></div>
@@ -470,7 +472,7 @@
           </div>
         </div>
 
-        <div class="yt-card reveal">
+        <div class="yt-card">
           <div class="yt-thumb empty" data-file="thumb05.png"><img src="images/thumb05.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">14:02</span></div>
           <div class="yt-info">
             <div class="yt-av" style="background:#8b46c7"><svg><use href="#ic-ball"/></svg></div>
@@ -482,7 +484,7 @@
           </div>
         </div>
 
-        <div class="yt-card reveal">
+        <div class="yt-card">
           <div class="yt-thumb empty" data-file="thumb06.png"><img src="images/thumb06.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">9:57</span></div>
           <div class="yt-info">
             <div class="yt-av" style="background:#0f9488"><svg><use href="#ic-shield"/></svg></div>
@@ -494,7 +496,7 @@
           </div>
         </div>
 
-        <div class="yt-card reveal">
+        <div class="yt-card">
           <div class="yt-thumb empty" data-file="thumb07.png"><img src="images/thumb07.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">8:31</span></div>
           <div class="yt-info">
             <div class="yt-av" style="background:#c2810f"><svg><use href="#ic-ball"/></svg></div>
@@ -506,7 +508,7 @@
           </div>
         </div>
 
-        <div class="yt-card reveal">
+        <div class="yt-card">
           <div class="yt-thumb empty" data-file="thumb08.png"><img src="images/thumb08.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">18:09</span></div>
           <div class="yt-info">
             <div class="yt-av" style="background:#1ba34d"><svg><use href="#ic-shield"/></svg></div>
@@ -518,7 +520,7 @@
           </div>
         </div>
 
-        <div class="yt-card reveal">
+        <div class="yt-card">
           <div class="yt-thumb empty" data-file="thumb09.png"><img src="images/thumb09.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">15:33</span></div>
           <div class="yt-info">
             <div class="yt-av" style="background:#0e85c2"><svg><use href="#ic-ball"/></svg></div>
@@ -530,7 +532,7 @@
           </div>
         </div>
 
-        <div class="yt-card reveal">
+        <div class="yt-card">
           <div class="yt-thumb empty" data-file="thumb10.png"><img src="images/thumb10.png" alt="" loading="lazy" onerror="this.remove()" /><span class="yt-badge">11:40</span></div>
           <div class="yt-info">
             <div class="yt-av" style="background:#b8941a"><svg><use href="#ic-shield"/></svg></div>
@@ -542,6 +544,7 @@
           </div>
         </div>
 
+        </div>
       </div>
       <p class="proof-note">Illustrative examples of football short-form content, not real videos, channels or earnings claims. Replace the placeholder tiles with your own thumbnails in <code>images/</code> (thumb04 through thumb10). Results depend on your work, niche and consistency.</p>
     </div>
@@ -621,6 +624,15 @@
     els.mins.textContent = pad(m); els.secs.textContent = pad(Math.floor(diff / 1000));
   }
   tick(); setInterval(tick, 1000);
+
+  // Move proof marquee directly under the hero.
+  const proof = document.getElementById('proofSection');
+  const heroEl = document.querySelector('header.hero');
+  if (proof && heroEl) heroEl.after(proof);
+
+  // Duplicate track content for a seamless infinite loop.
+  const track = document.getElementById('ytTrack');
+  if (track) track.innerHTML += track.innerHTML;
 
   // Scroll reveal.
   const io = new IntersectionObserver((entries) => {
