@@ -80,10 +80,10 @@
   .hero p.sub { font-size: 1.12rem; color: var(--ink-soft); max-width: 46ch; margin-bottom: 30px; }
 
   /* trophy animation */
-  .stage { position: relative; height: 560px; display: grid; place-items: center; }
+  .stage { position: relative; height: 620px; display: grid; place-items: center; }
   .stage .halo { position: absolute; width: 520px; height: 520px; border-radius: 50%; background: radial-gradient(circle, rgba(233,196,106,0.22), transparent 62%); filter: blur(6px); animation: pulse 5s ease-in-out infinite; }
   @keyframes pulse { 0%,100% { transform: scale(1); opacity: .8; } 50% { transform: scale(1.08); opacity: 1; } }
-  .trophy { width: 420px; max-width: 100%; height: auto; animation: bob 4.2s ease-in-out infinite; filter: drop-shadow(0 24px 40px rgba(0,0,0,0.55)); position: relative; z-index: 2; }
+  .trophy { width: 540px; max-width: 110%; height: auto; animation: bob 4.2s ease-in-out infinite; position: relative; z-index: 2; }
   @keyframes bob { 0%,100% { transform: translateY(0) rotate(-1deg); } 50% { transform: translateY(-16px) rotate(1deg); } }
   .trophy .sheen { animation: sheen 4.5s ease-in-out infinite; transform-origin: center; }
   @keyframes sheen { 0%,72%,100% { opacity: 0; } 80% { opacity: .85; } 86% { opacity: .2; } }
@@ -219,8 +219,10 @@
 
   @media (max-width: 880px) {
     .hero-grid, .mock-grid, .who { grid-template-columns: 1fr; gap: 36px; }
-    .stage { height: 420px; }
-    .trophy { width: 320px; }
+    .hero-grid { position: relative; }
+    .hero-grid > div:first-child { position: relative; z-index: 1; }
+    .stage { position: absolute; inset: -30px -12% auto -12%; height: auto; opacity: 0.16; z-index: 0; pointer-events: none; }
+    .trophy { width: 460px; }
     .who-figure { order: -1; }
     .who-figure img { height: 320px; }
     .stats, .includes { grid-template-columns: 1fr; }
@@ -287,12 +289,10 @@
           </div>
         </div>
 
-        <!-- ANIMATED TROPHY -->
+        <!-- TROPHY VIDEO -->
         <div class="stage" aria-hidden="true">
-          <div class="halo"></div>
-          <span class="spark a"></span><span class="spark b"></span><span class="spark c"></span>
-          <video class="trophy" autoplay muted loop playsinline poster="images/trophy_poster.png">
-            <source src="images/trophy.webm" type="video/webm" />
+          <video class="trophy" autoplay muted loop playsinline poster="images/trophy_poster.jpg">
+            <source src="images/trophy.mp4" type="video/mp4" />
           </video>
         </div>
       </div>
@@ -320,35 +320,35 @@
     <div class="wrap">
       <div class="sec-head reveal">
         <span class="eyebrow">What's inside</span>
-        <h2 class="serif">Everything to launch, nothing you don't need.</h2>
-        <p>A complete, footage-free system. Download it, build a buffer of videos, start posting.</p>
+        <h2 class="serif">Everything to start cashing in. Nothing else.</h2>
+        <p>Open it, post the same day. No theory, no filler, no 40-page “mindset” PDF.</p>
       </div>
       <div class="includes reveal">
         <div class="item feature">
-          <span class="pill">The moat</span>
+          <span class="pill">Don't get nuked</span>
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
-          <h3>The Licensing Guide</h3>
-          <p>The part nobody else has. Exactly what YouTube and FIFA let you use versus what gets you struck, plus how to apply to the official Creator Access Program. One avoided strike pays for the whole kit.</p>
+          <h3>The strike-proof rulebook</h3>
+          <p>What you can post vs what kills your channel. The exact YouTube + FIFA footage rules nobody hands you, plus how to get into the official Creator Access Program. Get this wrong once and you're done before kickoff.</p>
         </div>
         <div class="item">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/></svg></div>
-          <h3>30 AI Prompts</h3>
-          <p>Copy-paste into ChatGPT for hooks, full Shorts scripts, titles and voiceover polish, built to pass YouTube's “original value” review so you stay monetizable.</p>
+          <h3>30 prompts, copy-paste ready</h3>
+          <p>Hooks, scripts, titles, voiceover. Paste into ChatGPT, get a full day of content in 15 minutes. Zero writing from scratch.</p>
         </div>
         <div class="item">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
-          <h3>The Launch Playbook</h3>
-          <p>Pick-your-lane niche guide, hook formulas, a 5-week posting calendar from group stage to final, and the 60-minute daily production loop.</p>
+          <h3>Your 5-week game plan</h3>
+          <p>Day-by-day what to post, group stage to final. Open it, follow it, hit upload. No staring at a blank screen.</p>
         </div>
         <div class="item">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
-          <h3>Batching Frameworks</h3>
-          <p>The exact workflow to produce a full day of Shorts in about 15 minutes. Script six, record six, edit six.</p>
+          <h3>Steal-these content formats</h3>
+          <p>The faceless angles that actually print views: tactical, stats, predictions. Footage-free, so strike-free.</p>
         </div>
         <div class="item">
           <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg></div>
-          <h3>Free Updates</h3>
-          <p>Tactics and the licensing guide stay current through July 19, 2026. Buy once, get every update during the tournament.</p>
+          <h3>Updates till the final whistle</h3>
+          <p>Rules shift mid-tournament. You get every update free, through July 19. Pay once, done.</p>
         </div>
       </div>
     </div>
@@ -541,26 +541,6 @@
         </div>
 
         </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- WHO IT'S FOR -->
-  <section class="block">
-    <div class="wrap">
-      <div class="who">
-        <div class="reveal">
-          <span class="eyebrow">Who it's for</span>
-          <h2 class="serif" style="font-size:clamp(1.8rem,3.4vw,2.4rem);margin:12px 0 26px;">Built for people who move before the window closes.</h2>
-          <div>
-            <div class="who-row"><h3>Aspiring faceless creators</h3><p>You've wanted to start a channel. The World Cup is the trending reason to finally do it, with a system instead of guesswork.</p></div>
-            <div class="who-row"><h3>Football meme &amp; clip accounts</h3><p>Already posting on TikTok or Instagram? Expand to Shorts during the highest-RPM football window there will ever be.</p></div>
-            <div class="who-row"><h3>Side-hustlers</h3><p>You chase real windows. This one is concentrated, time-boxed, and front-run by almost nobody who understands the footage rules.</p></div>
-          </div>
-        </div>
-        <figure class="who-figure reveal" data-d="1">
-          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?fm=jpg&q=70&w=1200&auto=format&fit=crop" alt="A creator working on a phone and laptop" loading="lazy" />
-        </figure>
       </div>
     </div>
   </section>
