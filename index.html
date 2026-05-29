@@ -184,32 +184,39 @@
       radial-gradient(circle at 50% 30%, #ecc7a4 0 23%, rgba(236,199,164,0) 43%),
       radial-gradient(ellipse 80% 55% at 50% 108%, rgba(0,0,0,0.5) 0 55%, rgba(0,0,0,0) 100%),
       linear-gradient(180deg, rgba(255,255,255,0.22), rgba(0,0,0,0.28)); }
-  /* varied blurred "people" so avatars don't look cloned */
-  .yt-card:nth-child(5n+1) .yt-av::before { background:
+  /* varied blurred avatar TYPES: people / logos / landscapes — looks like real different channels */
+  /* 1 person (light skin) */
+  .yt-card:nth-child(7n+1) .yt-av::before { background:
       radial-gradient(circle at 50% 16%, #3a2a1e 0 14%, transparent 30%),
-      radial-gradient(circle at 50% 32%, #ecc7a4 0 22%, transparent 42%),
-      radial-gradient(ellipse 85% 55% at 50% 110%, #2a3550 0 55%, transparent 100%),
-      linear-gradient(180deg, rgba(255,255,255,.18), rgba(0,0,0,.3)); }
-  .yt-card:nth-child(5n+2) .yt-av::before { background:
-      radial-gradient(circle at 47% 18%, #1f1712 0 12%, transparent 28%),
-      radial-gradient(circle at 47% 34%, #c98d63 0 21%, transparent 40%),
-      radial-gradient(ellipse 80% 50% at 50% 112%, #4a3b2a 0 55%, transparent 100%),
-      linear-gradient(180deg, rgba(255,255,255,.16), rgba(0,0,0,.32)); }
-  .yt-card:nth-child(5n+3) .yt-av::before { background:
-      radial-gradient(circle at 53% 17%, #120c08 0 13%, transparent 30%),
-      radial-gradient(circle at 53% 33%, #8a5a3c 0 22%, transparent 42%),
-      radial-gradient(ellipse 82% 52% at 50% 110%, #3a2f4a 0 55%, transparent 100%),
-      linear-gradient(180deg, rgba(255,255,255,.14), rgba(0,0,0,.34)); }
-  .yt-card:nth-child(5n+4) .yt-av::before { background:
-      radial-gradient(circle at 50% 20%, #2b1d2a 0 16%, transparent 34%),
-      radial-gradient(circle at 50% 35%, #e8b89a 0 20%, transparent 40%),
-      radial-gradient(ellipse 86% 55% at 50% 112%, #21303a 0 55%, transparent 100%),
-      linear-gradient(180deg, rgba(255,255,255,.2), rgba(0,0,0,.28)); }
-  .yt-card:nth-child(5n+5) .yt-av::before { background:
-      radial-gradient(circle at 49% 16%, #241a12 0 13%, transparent 29%),
-      radial-gradient(circle at 49% 32%, #b07a52 0 21%, transparent 41%),
-      radial-gradient(ellipse 80% 50% at 50% 110%, #3d3326 0 55%, transparent 100%),
-      linear-gradient(180deg, rgba(255,255,255,.17), rgba(0,0,0,.3)); }
+      radial-gradient(circle at 50% 33%, #ecc7a4 0 22%, transparent 42%),
+      linear-gradient(180deg, #3a4f6b 0 55%, #243246 100%); }
+  /* 2 logo: ring badge */
+  .yt-card:nth-child(7n+2) .yt-av::before { background:
+      radial-gradient(circle at 50% 50%, #e9c46a 0 12%, transparent 13%),
+      radial-gradient(circle at 50% 50%, transparent 20%, #34c46d 22% 31%, transparent 33%),
+      radial-gradient(circle at 50% 42%, #0f3d24 0 70%, #0a2417 100%); }
+  /* 3 landscape: day */
+  .yt-card:nth-child(7n+3) .yt-av::before { background:
+      radial-gradient(circle at 72% 28%, #ffe08a 0 9%, transparent 13%),
+      linear-gradient(180deg, #4a7fb5 0 52%, #2f8f4e 52% 100%); }
+  /* 4 person (dark skin) */
+  .yt-card:nth-child(7n+4) .yt-av::before { background:
+      radial-gradient(circle at 50% 16%, #0e0a07 0 15%, transparent 31%),
+      radial-gradient(circle at 50% 33%, #7a4a2e 0 22%, transparent 42%),
+      linear-gradient(180deg, #33405a 0 55%, #1f2a3d 100%); }
+  /* 5 logo: diagonal mark */
+  .yt-card:nth-child(7n+5) .yt-av::before { background:
+      radial-gradient(circle at 50% 50%, #fff 0 8%, transparent 9%),
+      linear-gradient(135deg, #34c46d 0 50%, #1e7a45 50% 100%); }
+  /* 6 landscape: sunset */
+  .yt-card:nth-child(7n+6) .yt-av::before { background:
+      radial-gradient(circle at 50% 64%, #ffb066 0 10%, transparent 13%),
+      linear-gradient(180deg, #6b3f7a 0 40%, #c8643c 40% 62%, #2a1f2e 62% 100%); }
+  /* 7 person (tan) */
+  .yt-card:nth-child(7n) .yt-av::before { background:
+      radial-gradient(circle at 49% 17%, #241a12 0 13%, transparent 29%),
+      radial-gradient(circle at 49% 33%, #c98d63 0 21%, transparent 41%),
+      linear-gradient(180deg, #2f4a3a 0 55%, #1d2f25 100%); }
   .yt-chan .anon { filter: blur(3px); user-select: none; -webkit-user-select: none; letter-spacing: 0.02em; }
   .yt-chan { -webkit-user-select: none; }
   .yt-title { font-size: 0.95rem; font-weight: 600; color: var(--ink); line-height: 1.3; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
