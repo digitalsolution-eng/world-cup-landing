@@ -3,283 +3,264 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>World Cup 2026 Shorts Launch Kit — Start a Faceless Football Channel Before Kickoff</title>
-<meta name="description" content="Launch a faceless YouTube football channel and ride the biggest Shorts RPM spike in YouTube history — without getting struck for match footage. Licensing cheat-sheet, 30 AI prompts, full launch playbook. $29." />
+<title>World Cup 2026 Shorts Launch Kit — Start a faceless football channel before kickoff</title>
+<meta name="description" content="Launch a faceless YouTube football channel and ride the 2026 World Cup Shorts window — without getting struck for match footage. Licensing guide, 30 AI prompts, full launch playbook." />
 
-<!-- Open Graph / social preview -->
 <meta property="og:title" content="World Cup 2026 Shorts Launch Kit" />
-<meta property="og:description" content="Launch a faceless football Shorts channel before kickoff. No strikes. $29 — price goes up June 11." />
+<meta property="og:description" content="Launch a faceless football Shorts channel before kickoff. No strikes. $29 until June 11." />
 <meta property="og:type" content="website" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&display=swap" rel="stylesheet" />
 
 <style>
   :root {
-    --green: #0b8f3f;
-    --green-dark: #066b2e;
-    --green-glow: rgba(11, 143, 63, 0.45);
-    --black: #0a0d0b;
-    --ink: #11160f;
-    --white: #ffffff;
-    --muted: #9aa39c;
-    --line: rgba(255, 255, 255, 0.10);
-    --card: #13181400;
-    --radius: 16px;
-    --maxw: 1080px;
+    --paper: #fbfbf7;
+    --paper-2: #f4f4ee;
+    --ink: #16170f;
+    --ink-soft: #4b4d44;
+    --ink-faint: #8a8c80;
+    --green: #0a7a37;
+    --green-ink: #075c29;
+    --line: #e4e4db;
+    --line-strong: #d2d2c7;
+    --maxw: 1120px;
   }
 
   * { margin: 0; padding: 0; box-sizing: border-box; }
-
-  html { scroll-behavior: smooth; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
 
   body {
     font-family: 'Inter', system-ui, sans-serif;
-    background: var(--black);
-    color: var(--white);
+    background: var(--paper);
+    color: var(--ink);
     line-height: 1.6;
-    overflow-x: hidden;
+    font-size: 17px;
     -webkit-font-smoothing: antialiased;
   }
 
-  h1, h2, h3 { line-height: 1.05; }
+  .serif { font-family: 'Newsreader', Georgia, serif; font-weight: 500; letter-spacing: -0.01em; line-height: 1.08; }
 
-  .display {
-    font-family: 'Anton', 'Inter', sans-serif;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    font-weight: 400;
-  }
-
-  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 22px; }
-
+  .wrap { width: 100%; max-width: var(--maxw); margin: 0 auto; padding: 0 28px; }
   a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
 
-  /* ---------- Urgency banner ---------- */
-  .urgency {
-    position: sticky;
-    top: 0;
-    z-index: 50;
-    background: linear-gradient(90deg, var(--green-dark), var(--green));
-    color: #fff;
-    text-align: center;
-    font-weight: 700;
-    font-size: 0.85rem;
-    letter-spacing: 0.4px;
-    padding: 9px 14px;
+  .eyebrow {
+    font-size: 0.74rem; font-weight: 600; letter-spacing: 0.16em;
+    text-transform: uppercase; color: var(--green-ink);
   }
-  .urgency span { opacity: 0.92; }
+  .rule { height: 1px; background: var(--line); border: 0; }
 
-  /* ---------- Hero ---------- */
-  .hero {
-    position: relative;
-    padding: 64px 0 72px;
-    background:
-      radial-gradient(1200px 500px at 50% -10%, rgba(11,143,63,0.28), transparent 60%),
-      radial-gradient(700px 400px at 90% 10%, rgba(11,143,63,0.12), transparent 60%);
-    overflow: hidden;
+  /* ---- announcement bar ---- */
+  .bar {
+    position: sticky; top: 0; z-index: 50;
+    background: var(--ink); color: var(--paper);
+    font-size: 0.82rem; text-align: center;
+    padding: 10px 16px; letter-spacing: 0.01em;
   }
-  .pitch-lines {
-    position: absolute; inset: 0; opacity: 0.06; pointer-events: none;
-    background-image: repeating-linear-gradient(
-      90deg, transparent, transparent 78px, #fff 78px, #fff 80px);
-  }
-  .badge {
-    display: inline-flex; align-items: center; gap: 8px;
-    background: rgba(11,143,63,0.16);
-    border: 1px solid rgba(11,143,63,0.5);
-    color: #66e08e;
-    font-weight: 700; font-size: 0.78rem; letter-spacing: 0.6px;
-    text-transform: uppercase;
-    padding: 7px 14px; border-radius: 999px;
-    margin-bottom: 22px;
-  }
-  .dot { width: 8px; height: 8px; border-radius: 50%; background: #2bd964; box-shadow: 0 0 10px #2bd964; }
+  .bar b { color: #6fd897; font-weight: 600; }
 
-  .hero h1 {
-    font-size: clamp(2.4rem, 6.4vw, 4.6rem);
-    margin-bottom: 18px;
-    max-width: 16ch;
+  /* ---- nav ---- */
+  nav {
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 20px 0; border-bottom: 1px solid var(--line);
   }
-  .hero h1 em { color: var(--green); font-style: normal; }
+  .brand { font-family: 'Newsreader', serif; font-size: 1.18rem; font-weight: 600; letter-spacing: -0.01em; }
+  .brand span { color: var(--green); }
+  .nav-cta {
+    font-size: 0.9rem; font-weight: 600; color: var(--ink);
+    border: 1px solid var(--line-strong); padding: 9px 18px; border-radius: 8px;
+    transition: border-color .15s, background .15s;
+  }
+  .nav-cta:hover { border-color: var(--green); background: #fff; }
 
-  .sub {
-    font-size: clamp(1.02rem, 2.1vw, 1.25rem);
-    color: #cdd4ce;
-    max-width: 56ch;
-    margin-bottom: 30px;
+  /* ---- hero ---- */
+  .hero { padding: 70px 0 28px; }
+  .hero-grid { display: grid; grid-template-columns: 1.05fr 0.95fr; gap: 56px; align-items: center; }
+  .hero h1 { font-size: clamp(2.5rem, 5vw, 3.9rem); margin: 18px 0 22px; }
+  .hero h1 em { font-style: italic; color: var(--green-ink); }
+  .hero p.sub { font-size: 1.12rem; color: var(--ink-soft); max-width: 46ch; margin-bottom: 30px; }
+
+  .hero-figure { position: relative; }
+  .hero-figure img {
+    width: 100%; height: 460px; object-fit: cover;
+    border-radius: 14px; filter: saturate(0.92) contrast(1.02);
+  }
+  .figure-cap {
+    font-size: 0.74rem; color: var(--ink-faint); margin-top: 10px;
+    letter-spacing: 0.02em;
   }
 
-  /* ---------- Countdown ---------- */
-  .countdown {
-    display: flex; gap: 10px; flex-wrap: wrap;
-    margin-bottom: 34px;
-  }
-  .cd-box {
-    background: rgba(255,255,255,0.04);
-    border: 1px solid var(--line);
-    border-radius: 12px;
-    padding: 14px 8px 10px;
-    min-width: 80px; text-align: center;
-    backdrop-filter: blur(4px);
-  }
-  .cd-num {
-    font-family: 'Anton', sans-serif;
-    font-size: 2.3rem; line-height: 1;
-    color: #fff;
-  }
-  .cd-label {
-    font-size: 0.66rem; letter-spacing: 1.5px;
-    text-transform: uppercase; color: var(--muted);
-    margin-top: 6px;
-  }
-  .cd-caption { font-size: 0.85rem; color: var(--muted); margin-top: 4px; }
-  .cd-caption.live { color: #2bd964; font-weight: 700; }
+  /* ---- countdown (minimal) ---- */
+  .countdown { display: flex; gap: 30px; margin: 0 0 30px; }
+  .cd-box { text-align: left; }
+  .cd-num { font-family: 'Newsreader', serif; font-size: 2.5rem; line-height: 1; font-weight: 500; }
+  .cd-label { font-size: 0.7rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--ink-faint); margin-top: 6px; }
+  .cd-caption { font-size: 0.88rem; color: var(--ink-soft); margin-bottom: 30px; }
+  .cd-caption.live { color: var(--green-ink); font-weight: 600; }
 
-  /* ---------- Buttons ---------- */
-  .cta-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  /* ---- buttons ---- */
   .btn {
     display: inline-flex; align-items: center; gap: 10px;
-    background: var(--green);
-    color: #fff; font-weight: 800;
-    font-size: 1.05rem;
-    padding: 16px 30px; border-radius: 12px;
-    border: none; cursor: pointer;
-    box-shadow: 0 10px 30px var(--green-glow);
-    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    background: var(--green); color: #fff; font-weight: 600; font-size: 1rem;
+    padding: 15px 26px; border-radius: 10px; border: 0; cursor: pointer;
+    transition: background .15s, transform .15s;
   }
-  .btn:hover { transform: translateY(-2px); background: #0aa047; box-shadow: 0 14px 38px var(--green-glow); }
-  .btn:active { transform: translateY(0); }
-  .price-strike { color: var(--muted); text-decoration: line-through; font-weight: 600; }
-  .price-now { color: #fff; font-weight: 800; }
-  .guarantee { font-size: 0.82rem; color: var(--muted); }
+  .btn:hover { background: var(--green-ink); transform: translateY(-1px); }
+  .btn svg { width: 18px; height: 18px; }
+  .cta-row { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+  .cta-meta { font-size: 0.86rem; color: var(--ink-faint); }
+  .cta-meta s { color: var(--ink-faint); }
+  .cta-meta b { color: var(--ink); font-weight: 600; }
 
-  /* ---------- Section scaffolding ---------- */
-  section.block { padding: 72px 0; border-top: 1px solid var(--line); }
-  .eyebrow {
-    color: var(--green); font-weight: 800; font-size: 0.8rem;
-    letter-spacing: 1.6px; text-transform: uppercase; margin-bottom: 12px;
-  }
-  .h2 { font-size: clamp(1.8rem, 4.2vw, 2.8rem); margin-bottom: 14px; }
-  .lead { color: #c3cbc4; max-width: 60ch; margin-bottom: 40px; font-size: 1.05rem; }
+  /* ---- section frame ---- */
+  section.block { padding: 78px 0; }
+  .block.alt { background: var(--paper-2); border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); }
+  .sec-head { max-width: 60ch; margin-bottom: 46px; }
+  .sec-head h2 { font-size: clamp(1.9rem, 3.6vw, 2.7rem); margin: 12px 0 14px; }
+  .sec-head p { color: var(--ink-soft); font-size: 1.06rem; }
 
-  /* ---------- Why-now stats ---------- */
-  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-  .stat {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 26px 22px;
-  }
-  .stat .big { font-family: 'Anton', sans-serif; font-size: 2.4rem; color: var(--green); line-height: 1; }
-  .stat p { color: #c3cbc4; margin-top: 10px; font-size: 0.95rem; }
+  /* ---- stats ---- */
+  .stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; border: 1px solid var(--line); border-radius: 14px; overflow: hidden; background: #fff; }
+  .stat { padding: 30px 28px; border-right: 1px solid var(--line); }
+  .stat:last-child { border-right: 0; }
+  .stat .n { font-family: 'Newsreader', serif; font-size: 2.6rem; line-height: 1; color: var(--green-ink); }
+  .stat p { color: var(--ink-soft); margin-top: 12px; font-size: 0.96rem; }
 
-  /* ---------- Includes ---------- */
-  .includes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px; }
-  .item {
-    background: rgba(255,255,255,0.03);
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 26px 24px;
-    position: relative;
-    transition: border-color 0.15s ease, transform 0.15s ease;
+  /* ---- includes ---- */
+  .includes { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+  .item { background: var(--paper); padding: 32px 30px; position: relative; }
+  .item.feature { grid-column: 1 / -1; background: #fff; }
+  .ic { width: 38px; height: 38px; color: var(--green); margin-bottom: 18px; }
+  .ic svg { width: 100%; height: 100%; stroke: currentColor; stroke-width: 1.6; fill: none; stroke-linecap: round; stroke-linejoin: round; }
+  .item h3 { font-family: 'Newsreader', serif; font-size: 1.4rem; font-weight: 600; margin-bottom: 8px; }
+  .item p { color: var(--ink-soft); font-size: 0.98rem; }
+  .item .pill {
+    position: absolute; top: 30px; right: 30px;
+    font-size: 0.68rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--green-ink); border: 1px solid var(--line-strong); padding: 4px 10px; border-radius: 999px;
   }
-  .item:hover { border-color: rgba(11,143,63,0.6); transform: translateY(-3px); }
-  .item .ic {
-    width: 44px; height: 44px; border-radius: 11px;
-    background: rgba(11,143,63,0.16);
-    display: grid; place-items: center;
-    font-size: 1.4rem; margin-bottom: 16px;
-  }
-  .item h3 { font-size: 1.18rem; margin-bottom: 8px; }
-  .item p { color: #bac2bb; font-size: 0.95rem; }
-  .item .tag {
-    position: absolute; top: 22px; right: 22px;
-    font-size: 0.66rem; font-weight: 800; letter-spacing: 0.8px;
-    text-transform: uppercase; color: #66e08e;
-    background: rgba(11,143,63,0.14); border: 1px solid rgba(11,143,63,0.4);
-    padding: 4px 9px; border-radius: 999px;
-  }
-  .item.full { grid-column: 1 / -1; }
 
-  /* ---------- Who it's for ---------- */
-  .who { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-  .who-card {
-    background: linear-gradient(180deg, rgba(11,143,63,0.10), rgba(255,255,255,0.02));
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    padding: 28px 24px;
+  /* ---- product mockup (CSS, shows real content) ---- */
+  .mock-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: 50px; align-items: center; }
+  .browser {
+    border: 1px solid var(--line-strong); border-radius: 12px; overflow: hidden;
+    box-shadow: 0 24px 60px rgba(20,23,15,0.10); background: #fff;
   }
-  .who-card .ic { font-size: 1.8rem; margin-bottom: 14px; }
-  .who-card h3 { font-size: 1.1rem; margin-bottom: 8px; }
-  .who-card p { color: #bac2bb; font-size: 0.93rem; }
+  .browser-bar { display: flex; align-items: center; gap: 7px; padding: 11px 14px; background: var(--paper-2); border-bottom: 1px solid var(--line); }
+  .browser-bar i { width: 11px; height: 11px; border-radius: 50%; background: #d2d2c7; display: inline-block; }
+  .browser-bar .addr { margin-left: 12px; font-size: 0.74rem; color: var(--ink-faint); font-family: ui-monospace, monospace; }
+  .doc { padding: 26px 28px; font-size: 0.82rem; color: var(--ink-soft); }
+  .doc h4 { font-family: 'Newsreader', serif; font-size: 1.15rem; color: var(--ink); margin-bottom: 14px; }
+  .doc .row { display: flex; gap: 9px; padding: 7px 0; border-bottom: 1px dashed var(--line); }
+  .doc .ok { color: var(--green); font-weight: 700; }
+  .doc .no { color: #b23b3b; font-weight: 700; }
+  .doc .mono { font-family: ui-monospace, monospace; font-size: 0.76rem; background: var(--paper-2); padding: 2px 6px; border-radius: 5px; color: var(--ink); }
 
-  /* ---------- Price / final CTA ---------- */
-  .pricewrap {
-    background:
-      radial-gradient(600px 300px at 50% 0%, rgba(11,143,63,0.25), transparent 70%),
-      rgba(255,255,255,0.03);
-    border: 1px solid rgba(11,143,63,0.5);
-    border-radius: 22px;
-    padding: 54px 30px;
-    text-align: center;
+  .file-list { display: flex; flex-direction: column; gap: 14px; }
+  .file {
+    display: flex; align-items: center; gap: 14px;
+    border: 1px solid var(--line); border-radius: 10px; padding: 16px 18px; background: var(--paper);
   }
-  .pricewrap .amount {
-    font-family: 'Anton', sans-serif;
-    font-size: 4.2rem; line-height: 1; color: #fff;
+  .file .ext { font-family: ui-monospace, monospace; font-size: 0.7rem; font-weight: 700; color: #fff; background: var(--green); padding: 6px 8px; border-radius: 6px; }
+  .file .ext.txt { background: var(--ink); }
+  .file .ext.md { background: #5a6b3a; }
+  .file b { display: block; font-size: 0.96rem; color: var(--ink); }
+  .file small { color: var(--ink-faint); }
+
+  /* ---- who ---- */
+  .who { display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center; }
+  .who-list { display: flex; flex-direction: column; }
+  .who-row { padding: 26px 0; border-bottom: 1px solid var(--line); }
+  .who-row:first-child { border-top: 1px solid var(--line); }
+  .who-row h3 { font-family: 'Newsreader', serif; font-size: 1.45rem; font-weight: 600; margin-bottom: 6px; }
+  .who-row p { color: var(--ink-soft); font-size: 0.98rem; }
+  .who-figure img { width: 100%; height: 520px; object-fit: cover; border-radius: 14px; filter: saturate(0.92); }
+
+  /* ---- pricing ---- */
+  .price-card {
+    max-width: 620px; margin: 0 auto; background: #fff;
+    border: 1px solid var(--line-strong); border-radius: 18px; padding: 48px 44px; text-align: center;
+    box-shadow: 0 24px 60px rgba(20,23,15,0.08);
   }
-  .pricewrap .was { color: var(--muted); text-decoration: line-through; font-size: 1.4rem; margin-left: 10px; }
-  .pricewrap .note { color: #c3cbc4; margin: 14px auto 28px; max-width: 44ch; }
-  .pricewrap .btn { font-size: 1.15rem; padding: 18px 38px; }
-  .ticklist { list-style: none; display: inline-flex; flex-direction: column; gap: 8px; text-align: left; margin: 0 auto 30px; }
-  .ticklist li { color: #d7ddd8; font-size: 0.96rem; }
-  .ticklist li::before { content: "✓"; color: var(--green); font-weight: 800; margin-right: 10px; }
+  .price-card .amount { font-family: 'Newsreader', serif; font-size: 4rem; line-height: 1; }
+  .price-card .was { color: var(--ink-faint); text-decoration: line-through; font-size: 1.3rem; margin-left: 8px; }
+  .price-card .note { color: var(--ink-soft); margin: 16px auto 26px; max-width: 42ch; }
+  .ticks { list-style: none; text-align: left; max-width: 400px; margin: 0 auto 30px; }
+  .ticks li { padding: 9px 0; border-bottom: 1px solid var(--line); color: var(--ink-soft); display: flex; gap: 12px; font-size: 0.97rem; }
+  .ticks li svg { width: 18px; height: 18px; stroke: var(--green); stroke-width: 2; fill: none; flex-shrink: 0; margin-top: 4px; }
+  .price-card .btn { font-size: 1.08rem; padding: 17px 38px; }
+  .price-card .fine { font-size: 0.82rem; color: var(--ink-faint); margin-top: 18px; }
 
-  /* ---------- Footer ---------- */
-  footer { padding: 40px 0 60px; border-top: 1px solid var(--line); color: var(--muted); font-size: 0.85rem; }
-  footer .disc { max-width: 70ch; margin-top: 10px; line-height: 1.6; }
+  /* ---- footer ---- */
+  footer { padding: 50px 0 70px; border-top: 1px solid var(--line); }
+  footer .brand { margin-bottom: 12px; }
+  footer p { color: var(--ink-faint); font-size: 0.84rem; max-width: 76ch; line-height: 1.7; }
 
-  /* ---------- Responsive ---------- */
-  @media (max-width: 860px) {
-    .stats, .who { grid-template-columns: 1fr; }
-    .includes { grid-template-columns: 1fr; }
+  /* ---- responsive ---- */
+  @media (max-width: 880px) {
+    .hero-grid, .mock-grid, .who { grid-template-columns: 1fr; gap: 36px; }
+    .hero-figure img { height: 320px; }
+    .who-figure { order: -1; }
+    .who-figure img { height: 320px; }
+    .stats, .includes { grid-template-columns: 1fr; }
+    .stat { border-right: 0; border-bottom: 1px solid var(--line); }
+    .stat:last-child { border-bottom: 0; }
+    .item.feature { grid-column: auto; }
   }
   @media (max-width: 520px) {
-    .cd-box { min-width: 66px; }
-    .cd-num { font-size: 1.9rem; }
-    .cta-row { gap: 12px; }
+    body { font-size: 16px; }
+    .countdown { gap: 20px; }
+    .cd-num { font-size: 2rem; }
     .btn { width: 100%; justify-content: center; }
+    nav .nav-cta { display: none; }
   }
 </style>
 </head>
 <body>
 
-  <!-- URGENCY BANNER -->
-  <div class="urgency" id="urgencyBar">
-    ⏳ Launch-week price — <span>$29 now, goes up to $39 on June 11. The window closes after the July 19 final.</span>
+  <div class="bar" id="bar">
+    The 2026 World Cup kicks off June 11. <b>$29 until kickoff</b> — then $39. The window closes after the July 19 final.
+  </div>
+
+  <div class="wrap">
+    <nav>
+      <div class="brand">Shorts Launch <span>Kit</span></div>
+      <a class="nav-cta" href="#GUMROAD_LINK">Get the kit — $29</a>
+    </nav>
   </div>
 
   <!-- HERO -->
   <header class="hero">
-    <div class="pitch-lines"></div>
     <div class="wrap">
-      <span class="badge"><span class="dot"></span> First USA World Cup · First YouTube official platform</span>
-      <h1 class="display">Launch a <em>faceless football</em> Shorts channel before kickoff</h1>
-      <p class="sub">The biggest Shorts RPM spike in YouTube history is coming. This kit gets you posting fast — and keeps you monetized while everyone else gets struck for match footage.</p>
+      <div class="hero-grid">
+        <div>
+          <span class="eyebrow">First USA World Cup · YouTube official platform</span>
+          <h1 class="serif">Launch a <em>faceless football</em> channel before kickoff.</h1>
+          <p class="sub">The 2026 World Cup is the biggest Shorts window YouTube has ever had. This kit gets you posting fast — and keeps you monetized while everyone else gets struck for match footage.</p>
 
-      <!-- COUNTDOWN -->
-      <div class="countdown" id="countdown" aria-label="Countdown to World Cup kickoff">
-        <div class="cd-box"><div class="cd-num" id="cd-days">--</div><div class="cd-label">Days</div></div>
-        <div class="cd-box"><div class="cd-num" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
-        <div class="cd-box"><div class="cd-num" id="cd-mins">--</div><div class="cd-label">Mins</div></div>
-        <div class="cd-box"><div class="cd-num" id="cd-secs">--</div><div class="cd-label">Secs</div></div>
-      </div>
-      <div class="cd-caption" id="cd-caption">until kickoff — June 11, 2026</div>
+          <div class="countdown" id="countdown" aria-label="Countdown to kickoff">
+            <div class="cd-box"><div class="cd-num serif" id="cd-days">--</div><div class="cd-label">Days</div></div>
+            <div class="cd-box"><div class="cd-num serif" id="cd-hours">--</div><div class="cd-label">Hours</div></div>
+            <div class="cd-box"><div class="cd-num serif" id="cd-mins">--</div><div class="cd-label">Mins</div></div>
+            <div class="cd-box"><div class="cd-num serif" id="cd-secs">--</div><div class="cd-label">Secs</div></div>
+          </div>
+          <div class="cd-caption" id="cd-caption">until kickoff — June 11, 2026</div>
 
-      <div class="cta-row" style="margin-top:28px;">
-        <a class="btn" href="#GUMROAD_LINK" id="heroCta">Get the Kit — <span class="price-now">$29</span></a>
-        <div class="guarantee"><span class="price-strike">$49</span> &nbsp;·&nbsp; Instant download · Free updates through the tournament</div>
+          <div class="cta-row">
+            <a class="btn" href="#GUMROAD_LINK">
+              Get the kit — $29
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <div class="cta-meta"><s>$49</s> &nbsp;·&nbsp; Instant download · Free updates through the tournament</div>
+          </div>
+        </div>
+
+        <figure class="hero-figure">
+          <img src="https://images.unsplash.com/photo-1486286701208-1d58e9338013?fm=jpg&q=70&w=1400&auto=format&fit=crop" alt="A football on a grass pitch" loading="eager" />
+          <figcaption class="figure-cap">Photo: Unsplash — free for commercial use.</figcaption>
+        </figure>
       </div>
     </div>
   </header>
@@ -287,47 +268,51 @@
   <!-- WHY NOW -->
   <section class="block">
     <div class="wrap">
-      <div class="eyebrow">Why this window is different</div>
-      <h2 class="h2 display">Five weeks. One topic. The highest-paying ad markets on earth.</h2>
-      <p class="lead">June 11 – July 19, 2026. Hosted across the USA, Canada and Mexico, with YouTube as the official platform pushing football to the front of the app.</p>
+      <div class="sec-head">
+        <span class="eyebrow">Why this window is different</span>
+        <h2 class="serif">Five weeks. One topic. The highest-paying ad markets on earth.</h2>
+        <p>June 11 – July 19, 2026, hosted across the USA, Canada and Mexico — with YouTube as the official platform pushing football to the front of the app.</p>
+      </div>
       <div class="stats">
-        <div class="stat"><div class="big">$40–65</div><p>Tournament sports CPMs in direct deals — far above the normal rate. Advertiser money floods the pool and lifts Shorts RPM.</p></div>
-        <div class="stat"><div class="big">1st</div><p>First USA-hosted World Cup and first time YouTube is the official Preferred Platform. Discovery has never been this easy for football.</p></div>
-        <div class="stat"><div class="big">5 wks</div><p>The whole window. Value decays sharply after the final. The creators who win are posting <em>before</em> kickoff.</p></div>
+        <div class="stat"><div class="n">$40–65</div><p>Tournament sports CPMs in direct deals — far above the normal rate. Advertiser money floods the pool and lifts Shorts RPM.</p></div>
+        <div class="stat"><div class="n">1st</div><p>First USA-hosted World Cup, and the first with YouTube as the official platform. Discovery has never been this easy for football.</p></div>
+        <div class="stat"><div class="n">5 wks</div><p>The whole window. Value decays sharply after the final — the creators who win are posting before kickoff.</p></div>
       </div>
     </div>
   </section>
 
-  <!-- WHAT'S INCLUDED -->
-  <section class="block" id="includes">
+  <!-- WHAT'S INSIDE -->
+  <section class="block alt" id="includes">
     <div class="wrap">
-      <div class="eyebrow">What's inside</div>
-      <h2 class="h2 display">Everything to launch — nothing you don't need</h2>
-      <p class="lead">A complete, footage-free system. Download, build your buffer, start posting.</p>
+      <div class="sec-head">
+        <span class="eyebrow">What's inside</span>
+        <h2 class="serif">Everything to launch — nothing you don't need.</h2>
+        <p>A complete, footage-free system. Download it, build a buffer of videos, start posting.</p>
+      </div>
       <div class="includes">
-        <div class="item full">
-          <span class="tag">The moat</span>
-          <div class="ic">🛡️</div>
-          <h3>The Licensing Cheat-Sheet</h3>
-          <p>The part nobody else has. Exactly what YouTube + FIFA let you use vs. what gets you struck — plus how to apply to the official Creator Access Program. One avoided strike pays for the whole kit.</p>
+        <div class="item feature">
+          <span class="pill">The moat</span>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/><path d="M9 12l2 2 4-4"/></svg></div>
+          <h3>The Licensing Guide</h3>
+          <p>The part nobody else has. Exactly what YouTube and FIFA let you use versus what gets you struck — plus how to apply to the official Creator Access Program. One avoided strike pays for the whole kit.</p>
         </div>
         <div class="item">
-          <div class="ic">🤖</div>
-          <h3>30 Plug-and-Play AI Prompts</h3>
-          <p>Copy-paste into ChatGPT for instant hooks, full Shorts scripts, titles and voiceover polish — built to pass YouTube's "original value" check so you stay monetizable.</p>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 3l1.8 5.4L19 10l-5.2 1.6L12 17l-1.8-5.4L5 10l5.2-1.6z"/><path d="M19 15l.7 2 .3.8.8.3 2 .7-2 .7-.8.3-.3.8-.7 2-.7-2-.3-.8-.8-.3-2-.7 2-.7.8-.3.3-.8z"/></svg></div>
+          <h3>30 AI Prompts</h3>
+          <p>Copy-paste into ChatGPT for hooks, full Shorts scripts, titles and voiceover polish — built to pass YouTube's “original value” review so you stay monetizable.</p>
         </div>
         <div class="item">
-          <div class="ic">📈</div>
-          <h3>The Full Launch Playbook</h3>
-          <p>Pick-your-lane niche guide, hook formulas, a 5-week posting calendar (group stage → final) and the 60-minute daily production loop.</p>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M3 17l6-6 4 4 8-8"/><path d="M15 7h6v6"/></svg></div>
+          <h3>The Launch Playbook</h3>
+          <p>Pick-your-lane niche guide, hook formulas, a 5-week posting calendar from group stage to final, and the 60-minute daily production loop.</p>
         </div>
         <div class="item">
-          <div class="ic">⚡</div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M12 2 2 7l10 5 10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></div>
           <h3>Batching Frameworks</h3>
           <p>The exact workflow to produce a full day of Shorts in about 15 minutes. Script six, record six, edit six.</p>
         </div>
         <div class="item">
-          <div class="ic">🔄</div>
+          <div class="ic"><svg viewBox="0 0 24 24"><path d="M21 2v6h-6"/><path d="M3 12a9 9 0 0 1 15-6.7L21 8"/><path d="M3 22v-6h6"/><path d="M21 12a9 9 0 0 1-15 6.7L3 16"/></svg></div>
           <h3>Free Updates</h3>
           <p>Tactics and the licensing guide stay current through July 19, 2026. Buy once, get every update during the tournament.</p>
         </div>
@@ -335,66 +320,99 @@
     </div>
   </section>
 
-  <!-- WHO IT'S FOR -->
+  <!-- PRODUCT PREVIEW (real content, CSS mockup) -->
   <section class="block">
     <div class="wrap">
-      <div class="eyebrow">Who it's for</div>
-      <h2 class="h2 display">Built for people who move before the window closes</h2>
-      <p class="lead"></p>
-      <div class="who">
-        <div class="who-card">
-          <div class="ic">🎬</div>
-          <h3>Aspiring faceless creators</h3>
-          <p>You've wanted to start a channel. The World Cup is the trending reason to finally do it — with a system instead of guesswork.</p>
-        </div>
-        <div class="who-card">
-          <div class="ic">⚽</div>
-          <h3>Football meme & clip accounts</h3>
-          <p>Already posting on TikTok or IG? Expand to Shorts during the highest-RPM football window there will ever be.</p>
-        </div>
-        <div class="who-card">
-          <div class="ic">💸</div>
-          <h3>Side-hustlers</h3>
-          <p>You chase real windows. This one is concentrated, time-boxed, and front-run by almost nobody who knows the footage rules.</p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- PRICE / FINAL CTA -->
-  <section class="block">
-    <div class="wrap">
-      <div class="pricewrap">
-        <div class="eyebrow">Launch-week price</div>
-        <div><span class="amount display">$29</span><span class="was">$49</span></div>
-        <p class="note">One viral Short during peak advertiser season pays for this many times over. Price goes up to $39 on June 11.</p>
-        <ul class="ticklist">
-          <li>Licensing Cheat-Sheet (PDF) — stay monetized, avoid strikes</li>
-          <li>30 AI Prompts — paste straight into ChatGPT</li>
-          <li>The Full Launch Playbook (PDF) — calendar, hooks, daily loop</li>
-          <li>Batching frameworks + free updates through July 19, 2026</li>
-        </ul>
+      <div class="mock-grid">
         <div>
-          <a class="btn" href="#GUMROAD_LINK" id="finalCta">Get the Kit — $29 →</a>
+          <span class="eyebrow">Inside the download</span>
+          <h2 class="serif" style="font-size:clamp(1.8rem,3.4vw,2.4rem);margin:12px 0 16px;">Not fluff. The exact rules and files you act on.</h2>
+          <p style="color:var(--ink-soft);margin-bottom:26px;">A clear, skimmable system you can open and use the same day — including the licensing checklist that keeps your channel alive.</p>
+          <div class="file-list">
+            <div class="file"><span class="ext md">PDF</span><div><b>Licensing Guide</b><small>Safe formats, strike traps, Creator Access steps</small></div></div>
+            <div class="file"><span class="ext">MD</span><div><b>30 AI Prompts</b><small>Hooks · scripts · titles · voiceover</small></div></div>
+            <div class="file"><span class="ext md">PDF</span><div><b>Launch Playbook</b><small>5-week calendar · daily loop · hook formulas</small></div></div>
+            <div class="file"><span class="ext txt">TXT</span><div><b>Listing &amp; batching frameworks</b><small>Plug-and-play copy</small></div></div>
+          </div>
         </div>
-        <p class="guarantee" style="margin-top:18px;">Instant download · Yours forever</p>
+
+        <div class="browser" aria-hidden="true">
+          <div class="browser-bar"><i></i><i></i><i></i><span class="addr">licensing-guide.pdf</span></div>
+          <div class="doc">
+            <h4>Pre-upload checklist</h4>
+            <div class="row"><span class="ok">✓</span><span>Original value (script / graphics / analysis) is the reason the video exists</span></div>
+            <div class="row"><span class="ok">✓</span><span>No raw broadcast footage you aren't licensed for</span></div>
+            <div class="row"><span class="ok">✓</span><span>No FIFA or sponsor logos implying endorsement</span></div>
+            <div class="row"><span class="no">✕</span><span>“Top 10 goals” clip compilations — classic Content&nbsp;ID magnet</span></div>
+            <div class="row" style="border-bottom:0;"><span class="no">✕</span><span>Livestreaming the match — licensed media partners only</span></div>
+            <p style="margin-top:16px;">Safe lanes: <span class="mono">tactical breakdowns</span> <span class="mono">data / stats</span> <span class="mono">predictions</span> — footage-free, clean monetization.</p>
+          </div>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- FOOTER -->
+  <!-- WHO IT'S FOR -->
+  <section class="block alt">
+    <div class="wrap">
+      <div class="who">
+        <div>
+          <span class="eyebrow">Who it's for</span>
+          <h2 class="serif" style="font-size:clamp(1.8rem,3.4vw,2.4rem);margin:12px 0 26px;">Built for people who move before the window closes.</h2>
+          <div class="who-list">
+            <div class="who-row">
+              <h3>Aspiring faceless creators</h3>
+              <p>You've wanted to start a channel. The World Cup is the trending reason to finally do it — with a system instead of guesswork.</p>
+            </div>
+            <div class="who-row">
+              <h3>Football meme &amp; clip accounts</h3>
+              <p>Already posting on TikTok or Instagram? Expand to Shorts during the highest-RPM football window there will ever be.</p>
+            </div>
+            <div class="who-row">
+              <h3>Side-hustlers</h3>
+              <p>You chase real windows. This one is concentrated, time-boxed, and front-run by almost nobody who understands the footage rules.</p>
+            </div>
+          </div>
+        </div>
+        <figure class="who-figure">
+          <img src="https://images.unsplash.com/photo-1563986768609-322da13575f3?fm=jpg&q=70&w=1200&auto=format&fit=crop" alt="A creator working on a phone and laptop" loading="lazy" />
+        </figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRICING -->
+  <section class="block">
+    <div class="wrap">
+      <div class="price-card">
+        <span class="eyebrow">Launch-week price</span>
+        <div style="margin-top:14px;"><span class="amount serif">$29</span><span class="was">$49</span></div>
+        <p class="note">One viral Short during peak advertiser season pays for this many times over. Price rises to $39 on June 11.</p>
+        <ul class="ticks">
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 6"/></svg>Licensing Guide (PDF) — stay monetized, avoid strikes</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 6"/></svg>30 AI prompts — paste straight into ChatGPT</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 6"/></svg>Launch Playbook (PDF) — calendar, hooks, daily loop</li>
+          <li><svg viewBox="0 0 24 24"><path d="M5 12l5 5L20 6"/></svg>Batching frameworks + free updates through July 19, 2026</li>
+        </ul>
+        <a class="btn" href="#GUMROAD_LINK">
+          Get the kit — $29
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <p class="fine">Instant download · Yours forever</p>
+      </div>
+    </div>
+  </section>
+
   <footer>
     <div class="wrap">
-      <strong>World Cup 2026 Shorts Launch Kit</strong>
-      <p class="disc">Honest note: this is a practical playbook, not a get-rich-quick promise. Results depend on the work you put in. Footage and program rules can change — always verify current terms on official YouTube and FIFA channels. Not affiliated with, endorsed by, or sponsored by FIFA or YouTube.</p>
+      <div class="brand">Shorts Launch <span>Kit</span></div>
+      <p>A practical playbook, not a get-rich-quick promise — results depend on the work you put in. Footage and program rules can change; always verify current terms on official YouTube and FIFA channels. Not affiliated with, endorsed by, or sponsored by FIFA or YouTube. Photography via Unsplash (free for commercial use).</p>
     </div>
   </footer>
 
 <script>
-  // ----- Countdown to kickoff: June 11, 2026, 20:00 ET (Mexico City opener kickoff ~ evening) -----
-  // Using UTC to stay consistent across viewers' time zones.
+  // Countdown to kickoff: June 11, 2026, 19:00 Central (Mexico City opener, evening).
   const KICKOFF = new Date('2026-06-11T19:00:00-05:00').getTime();
-
   const els = {
     days: document.getElementById('cd-days'),
     hours: document.getElementById('cd-hours'),
@@ -402,37 +420,27 @@
     secs: document.getElementById('cd-secs'),
     caption: document.getElementById('cd-caption'),
   };
-
-  function pad(n) { return String(n).padStart(2, '0'); }
+  const pad = n => String(n).padStart(2, '0');
 
   function tick() {
-    const now = Date.now();
-    let diff = KICKOFF - now;
-
+    let diff = KICKOFF - Date.now();
     if (diff <= 0) {
-      // Tournament is live — flip messaging.
-      els.days.textContent = '00';
-      els.hours.textContent = '00';
-      els.mins.textContent = '00';
-      els.secs.textContent = '00';
-      els.caption.textContent = '🔴 The World Cup is LIVE — the window is open NOW';
+      els.days.textContent = els.hours.textContent = els.mins.textContent = els.secs.textContent = '00';
+      els.caption.textContent = 'The World Cup is live — the window is open now.';
       els.caption.classList.add('live');
-      document.getElementById('urgencyBar').innerHTML =
-        '🔴 The tournament is LIVE — every day without posting is views left on the table. <span>Get the kit and start now.</span>';
+      document.getElementById('bar').innerHTML =
+        'The tournament is <b>live</b> — every day without posting is views left on the table.';
       return;
     }
-
     const d = Math.floor(diff / 86400000); diff -= d * 86400000;
     const h = Math.floor(diff / 3600000); diff -= h * 3600000;
     const m = Math.floor(diff / 60000); diff -= m * 60000;
     const s = Math.floor(diff / 1000);
-
     els.days.textContent = pad(d);
     els.hours.textContent = pad(h);
     els.mins.textContent = pad(m);
     els.secs.textContent = pad(s);
   }
-
   tick();
   setInterval(tick, 1000);
 </script>
