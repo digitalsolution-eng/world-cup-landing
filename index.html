@@ -291,31 +291,9 @@
         <div class="stage" aria-hidden="true">
           <div class="halo"></div>
           <span class="spark a"></span><span class="spark b"></span><span class="spark c"></span>
-          <svg class="trophy" viewBox="0 0 200 260" fill="none">
-            <defs>
-              <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
-                <stop offset="0" stop-color="#f7e08c"/><stop offset=".45" stop-color="#e9c46a"/><stop offset="1" stop-color="#b8860b"/>
-              </linearGradient>
-              <linearGradient id="goldDark" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0" stop-color="#d4a843"/><stop offset="1" stop-color="#8a6309"/>
-              </linearGradient>
-              <clipPath id="cupClip"><path d="M50 24h100v40a50 50 0 0 1-100 0z"/></clipPath>
-            </defs>
-            <!-- handles -->
-            <path d="M50 30C24 30 22 78 52 84" stroke="url(#goldDark)" stroke-width="9" stroke-linecap="round"/>
-            <path d="M150 30C176 30 178 78 148 84" stroke="url(#goldDark)" stroke-width="9" stroke-linecap="round"/>
-            <!-- cup bowl -->
-            <path d="M50 24h100v40a50 50 0 0 1-100 0z" fill="url(#gold)"/>
-            <g clip-path="url(#cupClip)"><rect class="sheen" x="40" y="10" width="26" height="120" fill="#ffffff" opacity="0" transform="skewX(-18)"/></g>
-            <path d="M50 24h100v6H50z" fill="#f7e08c"/>
-            <!-- stem -->
-            <path d="M92 112h16v26H92z" fill="url(#goldDark)"/>
-            <!-- base -->
-            <path d="M70 138h60l-6 24H76z" fill="url(#gold)"/>
-            <rect x="58" y="162" width="84" height="14" rx="3" fill="url(#goldDark)"/>
-            <rect x="48" y="176" width="104" height="18" rx="4" fill="url(#gold)"/>
-            <rect x="48" y="194" width="104" height="6" rx="3" fill="#8a6309"/>
-          </svg>
+          <video class="trophy" autoplay muted loop playsinline poster="images/trophy_poster.png">
+            <source src="images/trophy.webm" type="video/webm" />
+          </video>
         </div>
       </div>
     </div>
