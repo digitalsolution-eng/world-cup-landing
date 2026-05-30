@@ -117,12 +117,15 @@
   .platforms a { cursor: default; }
 
   /* scroll cue */
-  .scroll-cue { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 5px; color: var(--ink-soft); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; z-index: 40; animation: cue 1.5s ease-in-out infinite; pointer-events: none; transition: opacity .45s ease, transform .45s ease; text-shadow: 0 2px 8px rgba(0,0,0,.7); }
-  .scroll-cue svg { width: 22px; height: 22px; stroke: var(--green); stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px var(--green-glow)); }
+  .scroll-cue { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 6px; color: var(--ink-soft); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; z-index: 40; animation: cue 1.25s cubic-bezier(.6,0,.4,1) infinite; pointer-events: none; transition: opacity .45s ease, transform .45s ease; text-shadow: 0 2px 8px rgba(0,0,0,.7); }
+  .scroll-cue svg { width: 30px; height: 30px; stroke: var(--green); stroke-width: 2.4; fill: none; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 8px var(--green-glow)); animation: cueArrow 1.25s cubic-bezier(.6,0,.4,1) infinite; }
   .scroll-cue.merged { animation: none; opacity: 0; }
-  @keyframes cue { 0%,100% { transform: translate(-50%,0); opacity: .7; } 50% { transform: translate(-50%,8px); opacity: 1; } }
-  .btn.breathe { animation: breathe 2.4s ease-in-out infinite; }
-  @keyframes breathe { 0%,100% { box-shadow: 0 10px 30px var(--green-glow); transform: translateY(-2px) scale(1); } 50% { box-shadow: 0 0 0 6px rgba(52,196,109,.16), 0 18px 52px var(--green-glow); transform: translateY(-2px) scale(1.035); } }
+  @keyframes cue { 0% { transform: translate(-50%,0); opacity: .6; } 30% { transform: translate(-50%,-3px); } 55% { transform: translate(-50%,18px); opacity: 1; } 100% { transform: translate(-50%,0); opacity: .6; } }
+  @keyframes cueArrow { 0%,100% { transform: translateY(0); } 55% { transform: translateY(5px); } }
+  .btn.breathe { animation: breathe 2.2s ease-in-out infinite; }
+  @keyframes breathe { 0%,100% { box-shadow: 0 10px 30px var(--green-glow); transform: translateY(-2px) scale(1); } 50% { box-shadow: 0 0 0 8px rgba(52,196,109,.20), 0 18px 56px var(--green-glow); transform: translateY(-2px) scale(1.05); } }
+  .btn.pop { animation: btnPop .55s cubic-bezier(.3,1.4,.5,1) 1; }
+  @keyframes btnPop { 0% { transform: translateY(-2px) scale(1); } 45% { transform: translateY(-2px) scale(1.14); box-shadow: 0 0 0 14px rgba(52,196,109,.28), 0 22px 60px var(--green-glow); } 100% { transform: translateY(-2px) scale(1); } }
   @media (prefers-reduced-motion: reduce) { .scroll-cue { animation: none; } .btn.breathe { animation: none; } }
 
   /* sections */
@@ -653,6 +656,11 @@
         const dx = bcx - ccx, dy = bcy - ccy;
         cue.style.transform = `translate(calc(-50% + ${dx}px), ${dy}px) scale(.35)`;
         cue.classList.add('merged');
+        if (!finalCta.classList.contains('breathe')) {
+          // fire the one-shot attention pop the instant cue hits the button
+          finalCta.classList.add('pop');
+          setTimeout(() => finalCta.classList.remove('pop'), 600);
+        }
         finalCta.classList.add('breathe');
       } else {
         cue.style.transform = '';
