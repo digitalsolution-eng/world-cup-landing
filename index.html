@@ -119,7 +119,7 @@
   /* scroll cue */
   .scroll-cue { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); display: flex; flex-direction: column; align-items: center; gap: 5px; color: var(--ink-soft); font-size: 0.66rem; letter-spacing: 0.22em; text-transform: uppercase; z-index: 40; animation: cue 1.5s ease-in-out infinite; pointer-events: none; transition: opacity .45s ease, transform .45s ease; text-shadow: 0 2px 8px rgba(0,0,0,.7); }
   .scroll-cue svg { width: 22px; height: 22px; stroke: var(--green); stroke-width: 2.2; fill: none; stroke-linecap: round; stroke-linejoin: round; filter: drop-shadow(0 0 6px var(--green-glow)); }
-  .scroll-cue.merged { opacity: 0; transform: translate(-50%, 34px) scale(.55); animation: none; }
+  .scroll-cue.merged { animation: none; opacity: 0; }
   @keyframes cue { 0%,100% { transform: translate(-50%,0); opacity: .7; } 50% { transform: translate(-50%,8px); opacity: 1; } }
   .btn.breathe { animation: breathe 2.4s ease-in-out infinite; }
   @keyframes breathe { 0%,100% { box-shadow: 0 10px 30px var(--green-glow); transform: translateY(-2px) scale(1); } 50% { box-shadow: 0 0 0 6px rgba(52,196,109,.16), 0 18px 52px var(--green-glow); transform: translateY(-2px) scale(1.035); } }
@@ -642,18 +642,27 @@
   const cue = document.getElementById('scrollCue');
   const finalCta = document.getElementById('finalCta');
   if (cue && finalCta) {
-    const io2 = new IntersectionObserver((entries) => {
-      entries.forEach(e => {
-        if (e.isIntersecting) { cue.classList.add('merged'); finalCta.classList.add('breathe'); }
-        else { cue.classList.remove('merged'); finalCta.classList.remove('breathe'); }
-      });
-    }, { rootMargin: '0px 0px -12% 0px', threshold: 0.55 });
-    io2.observe(finalCta);
-    // hide the cue once they're basically at the page bottom anyway
-    window.addEventListener('scroll', () => {
-      const nearBottom = window.innerHeight + window.scrollY >= document.body.scrollHeight - 80;
-      if (nearBottom) cue.classList.add('merged');
-    }, { passive: true });
+    const update = () => {
+      const b = finalCta.getBoundingClientRect();
+      const c = cue.getBoundingClientRect();
+      const ccx = c.left + c.width / 2, ccy = c.top + c.height / 2;
+      const bcx = b.left + b.width / 2, bcy = b.top + b.height / 2;
+      const ctaVisible = b.top < window.innerHeight && b.bottom > 0;
+      // the button scrolls UP into the bouncing cue; merge once it reaches the cue's level
+      if (ctaVisible && bcy <= ccy + 28) {
+        const dx = bcx - ccx, dy = bcy - ccy;
+        cue.style.transform = `translate(calc(-50% + ${dx}px), ${dy}px) scale(.35)`;
+        cue.classList.add('merged');
+        finalCta.classList.add('breathe');
+      } else {
+        cue.style.transform = '';
+        cue.classList.remove('merged');
+        finalCta.classList.remove('breathe');
+      }
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
   }
 </script>
 </body>
